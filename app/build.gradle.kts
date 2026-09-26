@@ -10,21 +10,21 @@ plugins {
 
 
 android {
-    namespace = "com.gachiguild.gachitoefl"
+    namespace = "com.gachiguild.gachitoeic"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.gachiguild.gachitoefl"
+        applicationId = "com.gachiguild.gachitoeic"
         minSdk = 29
         targetSdk = 36
-        versionCode = 2
+        versionCode = 1
         versionName = "1.0"
         buildConfigField("boolean", "PRODUCTION_MODE", "false")
     }
 
     buildTypes {
         getByName("debug") {
-            // 通常のデバッグAPKではTOEFL 100+を無条件で確認できるようにする。
+            // 通常のデバッグAPKではプレミアムレベルを無条件で確認できるようにする。
             buildConfigField("boolean", "PRODUCTION_MODE", "false")
         }
         getByName("release") {

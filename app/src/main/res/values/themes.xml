@@ -1,11 +1,11 @@
 <resources>
-    <style name="Theme.AITOEFLCoach" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.GGToeic" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
-    <style name="Theme.AITOEFLCoach.Starting" parent="Theme.SplashScreen">
+    <style name="Theme.GGToeic.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@android:color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/splash_transparent</item>
-        <item name="postSplashScreenTheme">@style/Theme.AITOEFLCoach</item>
+        <item name="postSplashScreenTheme">@style/Theme.GGToeic</item>
     </style>
 </resources>

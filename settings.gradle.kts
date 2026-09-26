@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         maven { url = uri("https://maven.google.com") }
     }
 }
-rootProject.name = "GG_TOEFL"
+rootProject.name = "GG_TOEIC"
 include(":app")

@@ -8,24 +8,24 @@
         </intent>
     </queries>
 
-    <!-- Google Play の買い切り商品（TOEFL上位レベル解放）に必要 -->
+    <!-- Google Play の買い切り商品（TOEIC上位レベル解放）に必要 -->
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
-        android:name=".AIToeflCoachApplication"
+        android:name=".GgToeicApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_gachi"
-        android:label="GG TOEFL"
+        android:label="GG TOEIC"
         android:roundIcon="@mipmap/ic_launcher_gachi_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AITOEFLCoach">
+        android:theme="@style/Theme.GGToeic">
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AITOEFLCoach.Starting">
+            android:theme="@style/Theme.GGToeic.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -35,7 +35,7 @@
             android:name=".notification.StreakReminderReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.gachiguild.gachitoefl.action.STREAK_REMINDER" />
+                <action android:name="com.gachiguild.gachitoeic.action.STREAK_REMINDER" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
                 <action android:name="android.intent.action.TIME_SET" />
