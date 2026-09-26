@@ -10,7 +10,7 @@ package com.gachiguild.gachitoeic.data.local
  *  - Level 4: Advanced Academic（発展）: 講義・研究で使う高度語彙
  */
 object VocabularyClassifier {
-    /** Level 1（基礎）: 高校基礎〜英検2級程度の基本的な語（build_vocabulary.py の LEVEL1_WORDS と一致） */
+    /** Level 1（基礎）: 高校基礎〜英検2級程度の基本的な語 */
     private val level1Words = setOf(
         "a", "about", "after", "again", "all", "also", "an", "and", "any", "are",
         "as", "at", "back", "be", "because", "been", "before", "being", "between",
