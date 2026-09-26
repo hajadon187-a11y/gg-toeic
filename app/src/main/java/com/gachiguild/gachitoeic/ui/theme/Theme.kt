@@ -12,69 +12,69 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.intl.LocaleList
 
-// ── TOEIC ブルー（ライトテーマ） ──
-private val BluePrimary = Color(0xFF1976D2)
-private val BlueSecondary = Color(0xFF64B5F6)
-private val BlueTertiary = Color(0xFF90CAF9)
-private val BlueBackground = Color(0xFFF4F8FC)
-private val BlueSurface = Color(0xFFEAF3FB)
-private val BlueSurfaceVariant = Color(0xFFD9EAF7)
-private val BlueOnPrimary = Color(0xFFFFFFFF)
-private val BlueOnBackground = Color(0xFF19324A)
-private val BlueOutline = Color(0xFF91B4D0)
-private val BlueError = Color(0xFFBA1A1A)
+// ── TOEIC グリーン（ライトテーマ） ──
+private val GreenPrimary = Color(0xFF2E7D32)
+private val GreenSecondary = Color(0xFF66BB6A)
+private val GreenTertiary = Color(0xFF81C784)
+private val GreenBackground = Color(0xFFF3F8F3)
+private val GreenSurface = Color(0xFFE8F5E9)
+private val GreenSurfaceVariant = Color(0xFFD5EBD7)
+private val GreenOnPrimary = Color(0xFFFFFFFF)
+private val GreenOnBackground = Color(0xFF163B1B)
+private val GreenOutline = Color(0xFF91B89A)
+private val GreenError = Color(0xFFBA1A1A)
 
-private val LightBlueColors = lightColorScheme(
-    primary = BluePrimary,
-    onPrimary = BlueOnPrimary,
-    primaryContainer = Color(0xFFD1E4FF),
-    onPrimaryContainer = Color(0xFF001D36),
-    inversePrimary = Color(0xFFA3C9FF),
-    secondary = BlueSecondary,
-    onSecondary = Color(0xFF062F4F),
-    secondaryContainer = Color(0xFFC9E6FF),
-    onSecondaryContainer = Color(0xFF001E32),
-    tertiary = BlueTertiary,
-    onTertiary = Color(0xFF07304F),
-    tertiaryContainer = Color(0xFFD3E9FF),
-    onTertiaryContainer = Color(0xFF062F4F),
-    background = BlueBackground,
-    onBackground = BlueOnBackground,
-    surface = BlueSurface,
-    onSurface = BlueOnBackground,
-    surfaceVariant = BlueSurfaceVariant,
-    onSurfaceVariant = Color(0xFF405E76),
-    surfaceTint = BluePrimary,
-    inverseSurface = Color(0xFF2B3137),
-    inverseOnSurface = Color(0xFFEFF4FA),
-    error = BlueError,
+private val LightGreenColors = lightColorScheme(
+    primary = GreenPrimary,
+    onPrimary = GreenOnPrimary,
+    primaryContainer = Color(0xFFC8E6C9),
+    onPrimaryContainer = Color(0xFF0D3511),
+    inversePrimary = Color(0xFFA5D6A7),
+    secondary = GreenSecondary,
+    onSecondary = Color(0xFF123B18),
+    secondaryContainer = Color(0xFFCDE8CF),
+    onSecondaryContainer = Color(0xFF163B1B),
+    tertiary = GreenTertiary,
+    onTertiary = Color(0xFF173B1B),
+    tertiaryContainer = Color(0xFFD8EED9),
+    onTertiaryContainer = Color(0xFF163B1B),
+    background = GreenBackground,
+    onBackground = GreenOnBackground,
+    surface = GreenSurface,
+    onSurface = GreenOnBackground,
+    surfaceVariant = GreenSurfaceVariant,
+    onSurfaceVariant = Color(0xFF426047),
+    surfaceTint = GreenPrimary,
+    inverseSurface = Color(0xFF29332A),
+    inverseOnSurface = Color(0xFFEAF4EB),
+    error = GreenError,
     onError = Color(0xFFFFFFFF),
     errorContainer = Color(0xFFFFDAD6),
     onErrorContainer = Color(0xFF3B0A0A),
-    outline = BlueOutline,
-    outlineVariant = Color(0xFFBED5E8),
+    outline = GreenOutline,
+    outlineVariant = Color(0xFFBED9C1),
     scrim = Color(0xFF000000)
 )
 
-private val DarkBlueColors = darkColorScheme(
-    primary = Color(0xFF9CCAFF),
-    onPrimary = Color(0xFF003258),
-    primaryContainer = Color(0xFF004A7C),
-    onPrimaryContainer = Color(0xFFD1E4FF),
-    secondary = Color(0xFF8CC9F7),
-    onSecondary = Color(0xFF003450),
-    secondaryContainer = Color(0xFF145477),
-    onSecondaryContainer = Color(0xFFC9E6FF),
-    tertiary = Color(0xFFB5D8F8),
-    onTertiary = Color(0xFF18344C),
-    background = Color(0xFF101A24),
-    onBackground = Color(0xFFE0EAF3),
-    surface = Color(0xFF162431),
-    onSurface = Color(0xFFE0EAF3),
-    surfaceVariant = Color(0xFF394C5C),
-    onSurfaceVariant = Color(0xFFC0D0DF),
-    outline = Color(0xFF8A9BAC),
-    outlineVariant = Color(0xFF394C5C),
+private val DarkGreenColors = darkColorScheme(
+    primary = Color(0xFFA5D6A7),
+    onPrimary = Color(0xFF123B18),
+    primaryContainer = Color(0xFF2E6A35),
+    onPrimaryContainer = Color(0xFFC8E6C9),
+    secondary = Color(0xFF81C784),
+    onSecondary = Color(0xFF123B18),
+    secondaryContainer = Color(0xFF255B2A),
+    onSecondaryContainer = Color(0xFFCDE8CF),
+    tertiary = Color(0xFFB7DDB9),
+    onTertiary = Color(0xFF183B1C),
+    background = Color(0xFF0F1A11),
+    onBackground = Color(0xFFE0EEE1),
+    surface = Color(0xFF14231A),
+    onSurface = Color(0xFFE0EEE1),
+    surfaceVariant = Color(0xFF354C39),
+    onSurfaceVariant = Color(0xFFC2D6C4),
+    outline = Color(0xFF8BAA8F),
+    outlineVariant = Color(0xFF354C39),
     error = Color(0xFFFFB4AB),
     onError = Color(0xFF690005),
     errorContainer = Color(0xFF93000A),
@@ -114,7 +114,7 @@ fun GGToeicTheme(
     textLocaleTag: String = "ja-JP",
     content: @Composable () -> Unit
 ) {
-    val colors = if (darkTheme) DarkBlueColors else LightBlueColors
+    val colors = if (darkTheme) DarkGreenColors else LightGreenColors
     MaterialTheme(
         colorScheme = colors,
         typography = appTypography(textLocaleTag),

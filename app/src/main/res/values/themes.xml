@@ -4,7 +4,7 @@
     </style>
 
     <style name="Theme.GGToeic.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@android:color/white</item>
+        <item name="windowSplashScreenBackground">#F3F8F3</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/splash_transparent</item>
         <item name="postSplashScreenTheme">@style/Theme.GGToeic</item>
     </style>
