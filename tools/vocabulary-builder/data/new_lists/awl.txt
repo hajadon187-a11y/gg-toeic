@@ -1,0 +1,570 @@
+analyse : analiz etmek, çözümlemek
+approach : yaklaşım, yaklaşmak
+area : alan, bölge
+assess : değerlendirmek
+assume : varsaymak, üstlenmek
+authority : otorite, yetki
+available : mevcut, uygun
+benefit : fayda, yarar
+concept : kavram
+consist : oluşmak, meydana gelmek
+constitute : oluşturmak, teşkil etmek
+context : bağlam
+contract : sözleşme, kontrat
+create : yaratmak, oluşturmak
+data : veri
+define : tanımlamak
+derive : türetmek, elde etmek
+distribute : dağıtmak
+economy : ekonomi
+environment : çevre, ortam
+establish : kurmak, tesis etmek
+estimate : tahmin etmek, hesaplamak
+evident : açık, belli
+export : ihracat, ihraç etmek
+factor : etken, faktör
+finance : finans, mali
+formula : formül
+function : işlev, fonksiyon
+identify : belirlemek, tanımlamak
+income : gelir
+indicate : belirtmek, göstermek
+individual : birey, bireysel
+interpret : yorumlamak, tercüme etmek
+involve : içermek, kapsamak
+issue : konu, sorun, mesele
+labour : emek, iş gücü
+legal : yasal, hukuki
+legislate : yasa yapmak, yasalaştırmak
+major : büyük, önemli, başlıca
+method : yöntem, metot
+occur : meydana gelmek, olmak
+percent : yüzde
+period : dönem, süre
+policy : politika, siyaset
+principle : ilke, prensip
+proceed : devam etmek, ilerlemek
+process : süreç, işlem
+require : gerektirmek
+research : araştırma
+respond : yanıt vermek, cevaplamak
+role : rol
+section : bölüm, kısım
+sector : sektör
+significant : önemli, anlamlı
+similar : benzer
+source : kaynak
+specific : belirli, özel
+structure : yapı
+theory : teori, kuram
+vary : farklılık göstermek, değişmek
+achieve : başarmak, elde etmek
+acquire : edinmek, kazanmak
+administrate : yönetmek, idare etmek
+affect : etkilemek
+appropriate : uygun, yerinde
+aspect : yön, boyut
+assist : yardım etmek
+category : kategori, sınıf
+chapter : bölüm (kitap)
+commission : komisyon
+community : topluluk
+complex : karmaşık
+compute : hesaplamak
+conclude : sonuçlandırmak, sonuca varmak
+conduct : yürütmek, davranış
+consequent : sonuç olarak ortaya çıkan
+construct : inşa etmek, oluşturmak
+consume : tüketmek
+credit : kredi, itibar
+culture : kültür
+design : tasarım, tasarlamak
+distinct : farklı, belirgin
+element : öge, unsur
+equate : eşitlemek, denk tutmak
+evaluate : değerlendirmek
+feature : özellik
+final : son, nihai
+focus : odak, odaklanmak
+impact : etki, darbe
+injure : yaralamak
+institute : enstitü, kurum
+invest : yatırım yapmak
+item : madde, öge
+journal : dergi, günlük
+maintain : sürdürmek, korumak
+normal : normal, olağan
+obtain : elde etmek
+participate : katılmak
+perceive : algılamak, kavramak
+positive : olumlu, pozitif
+potential : potansiyel, olası
+previous : önceki
+primary : birincil, temel
+purchase : satın almak
+range : aralık, çeşitlilik
+region : bölge
+regulate : düzenlemek
+relevant : ilgili, alakalı
+reside : ikamet etmek, oturmak
+resource : kaynak
+restrict : kısıtlamak, sınırlamak
+secure : güvenli, güvence altına almak
+seek : aramak, çabalamak
+select : seçmek
+site : alan, yer
+strategy : strateji
+survey : anket, araştırma
+text : metin
+tradition : gelenek
+transfer : aktarma, transfer
+alternative : alternatif, seçenek
+circumstance : koşul, durum
+comment : yorum
+compensate : telafi etmek, tazmin etmek
+component : bileşen, parça
+consent : onay, rıza
+considerable : önemli, hatırı sayılır
+constant : sabit, sürekli
+constrain : kısıtlamak, zorlamak
+contribute : katkıda bulunmak
+convene : toplamak, bir araya gelmek
+coordinate : koordine etmek
+core : çekirdek, öz
+corporate : kurumsal, şirket
+correspond : yazışmak, karşılık gelmek
+criteria : ölçütler, kriterler
+deduce : sonuç çıkarmak
+demonstrate : göstermek, kanıtlamak
+document : belge, belgelemek
+dominate : hâkim olmak, egemen olmak
+emphasis : vurgu
+ensure : sağlamak, güvence altına almak
+exclude : hariç tutmak, dışlamak
+framework : çerçeve
+fund : fon, finanse etmek
+illustrate : göstermek, örneklemek
+immigrate : göç etmek
+imply : ima etmek, kastetmek
+initial : başlangıç, ilk
+instance : örnek, durum
+interact : etkileşimde bulunmak
+justify : haklı göstermek, gerekçelendirmek
+layer : katman, tabaka
+link : bağlantı, bağlamak
+locate : yerini belirlemek, konumlandırmak
+maximise : en üst düzeye çıkarmak
+minor : küçük, önemsiz
+negate : olumsuzlamak, geçersiz kılmak
+outcome : sonuç
+partner : ortak, partner
+philosophy : felsefe
+physical : fiziksel, bedensel
+proportion : oran, orantı
+publish : yayımlamak
+react : tepki göstermek
+register : kayıt, kaydetmek
+rely : güvenmek, bel bağlamak
+remove : kaldırmak, çıkarmak
+scheme : plan, şema
+sequence : sıra, dizi
+sex : cinsiyet
+shift : değişim, kaydırmak
+specify : belirtmek, belirlemek
+sufficient : yeterli
+task : görev
+technical : teknik
+technique : teknik, yöntem
+technology : teknoloji
+valid : geçerli
+volume : hacim, cilt
+access : erişim, erişmek
+adequate : yeterli, uygun
+annual : yıllık
+apparent : açık, görünür
+approximate : yaklaşık
+attitude : tutum, tavır
+attribute : özellik, atfetmek
+civil : sivil, medeni
+code : kod, şifre
+commit : taahhüt etmek, işlemek
+communicate : iletişim kurmak
+concentrate : yoğunlaşmak, konsantre olmak
+confer : görüşmek, vermek
+contrast : karşıtlık, zıtlık
+cycle : döngü
+debate : tartışma, münazara
+despite : rağmen, karşın
+dimension : boyut
+domestic : yerli, ev içi
+emerge : ortaya çıkmak
+error : hata
+ethnic : etnik
+goal : hedef, amaç
+grant : hibe, vermek
+hence : bu nedenle, dolayısıyla
+hypothesis : hipotez, varsayım
+implement : uygulamak, hayata geçirmek
+implicate : suç ortağı yapmak, işaret etmek
+impose : dayatmak, empoze etmek
+integrate : bütünleştirmek, entegre etmek
+internal : iç, dahili
+investigate : araştırmak, soruşturmak
+job : iş
+label : etiket
+mechanism : mekanizma
+obvious : açık, bariz
+occupy : işgal etmek, meşgul etmek
+option : seçenek
+output : çıktı, üretim
+overall : genel, bütünsel
+parallel : paralel
+parameter : parametre, değişken
+phase : aşama, evre
+predict : tahmin etmek, öngörmek
+principal : müdür, asıl, baş
+prior : önceki, önce
+professional : profesyonel, mesleki
+project : proje
+promote : teşvik etmek, terfi ettirmek
+regime : rejim, yönetim
+resolve : çözmek, karar vermek
+retain : tutmak, muhafaza etmek
+series : dizi, seri
+statistic : istatistik
+status : durum, statü
+stress : stres, vurgu
+subsequent : sonraki, müteakip
+sum : toplam
+summary : özet
+undertake : üstlenmek
+academy : akademi
+adjust : ayarlamak, uyarlamak
+alter : değiştirmek
+amend : düzeltmek, değiştirmek
+aware : farkında
+capacity : kapasite, yeterlilik
+challenge : meydan okuma, zorluk
+clause : madde, fıkra
+compound : bileşik, karışım
+conflict : çatışma
+consult : danışmak
+contact : iletişim, temas
+decline : düşmek, azalmak, reddetmek
+discrete : ayrık, bağımsız
+draft : taslak
+enable : mümkün kılmak, sağlamak
+energy : enerji
+enforce : uygulamak, zorlamak
+entity : varlık, kuruluş
+equivalent : eşdeğer, denk
+evolve : evrimleşmek, gelişmek
+expand : genişlemek, büyümek
+expose : maruz bırakmak, açığa çıkarmak
+external : dış, harici
+facilitate : kolaylaştırmak
+fundamental : temel
+generate : üretmek, oluşturmak
+generation : nesil, kuşak
+image : görüntü, imaj
+liberal : liberal, özgürlükçü
+licence : lisans, izin
+logic : mantık
+margin : kenar, marj
+medical : tıbbi
+mental : zihinsel
+modify : değiştirmek, düzenlemek
+monitor : izlemek, gözlemlemek
+network : ağ, şebeke
+notion : kavram, fikir
+objective : amaç, hedef, nesnel
+orient : yönlendirmek, yönelmek
+perspective : bakış açısı
+precise : kesin, hassas
+prime : başlıca, ana
+psychology : psikoloji
+pursue : takip etmek, peşinden gitmek
+ratio : oran
+reject : reddetmek
+revenue : gelir, hasılat
+stable : istikrarlı, kararlı
+style : biçem, stil
+substitute : yerine koymak, ikame
+sustain : sürdürmek, desteklemek
+symbol : sembol, simge
+target : hedef
+transit : geçiş, transit
+trend : eğilim, akım
+version : sürüm, versiyon
+welfare : refah, sosyal yardım
+whereas : oysa, halbuki
+abstract : soyut, özet
+accurate : doğru, kesin
+acknowledge : kabul etmek, onaylamak
+aggregate : toplamak, toplam
+allocate : tahsis etmek, ayırmak
+assign : atamak, görevlendirmek
+attach : eklemek, iliştirmek
+author : yazar
+bond : bağ, tahvil
+brief : kısa, özet
+capable : yetenekli, muktedir
+cite : alıntı yapmak, kaynak göstermek
+cooperate : işbirliği yapmak
+discriminate : ayrımcılık yapmak, ayırt etmek
+display : sergilemek, göstermek
+diverse : çeşitli, farklı
+domain : alan, etki alanı
+edit : düzenlemek
+enhance : geliştirmek, artırmak
+estate : mülk, emlak
+exceed : aşmak, geçmek
+expert : uzman
+explicit : açık, belirgin
+federal : federal
+fee : ücret
+flexible : esnek
+furthermore : ayrıca, üstelik
+gender : cinsiyet, toplumsal cinsiyet
+ignorant : cahil, bilgisiz
+incentive : teşvik, özendirme
+incidence : oluşum sıklığı, yaygınlık
+incorporate : dahil etmek, birleştirmek
+index : dizin, endeks
+inhibit : engellemek, ketlemek
+initiate : başlatmak
+input : girdi, katkı
+instruct : talimat vermek, öğretmek
+intelligent : zeki, akıllı
+interval : aralık
+lecture : ders, konferans
+migrate : göç etmek
+minimum : en az, asgari
+ministry : bakanlık
+motive : güdü, neden
+neutral : tarafsız, nötr
+nevertheless : yine de, bununla birlikte
+overseas : denizaşırı, yurt dışı
+precede : önce gelmek, öncelemek
+presume : varsaymak, farz etmek
+rational : rasyonel, akılcı
+recover : iyileşmek, kurtarmak
+reveal : ortaya çıkarmak, açığa vurmak
+scope : kapsam, alan
+subsidy : sübvansiyon, devlet yardımı
+tape : bant, kayıt
+trace : iz, izlemek
+transform : dönüştürmek
+transport : taşımak, ulaşım
+underlie : temelini oluşturmak
+utilise : kullanmak, yararlanmak
+adapt : uyarlamak, adapte olmak
+adult : yetişkin
+advocate : savunmak, savunucu
+aid : yardım, destek
+channel : kanal
+chemical : kimyasal
+classic : klasik
+comprehensive : kapsamlı
+comprise : kapsamak, içermek
+confirm : onaylamak, doğrulamak
+contrary : zıt, aksi
+convert : dönüştürmek, çevirmek
+couple : çift, birkaç
+decade : on yıl
+definite : kesin, belirli
+deny : inkar etmek, reddetmek
+differentiate : ayırt etmek, farklılaştırmak
+dispose : elden çıkarmak, atmak
+dynamic : dinamik
+eliminate : ortadan kaldırmak, elemek
+empirical : deneysel, ampirik
+equip : donatmak, teçhiz etmek
+extract : çıkarmak, özüt
+file : dosya, dosyalamak
+finite : sonlu, sınırlı
+foundation : vakıf, temel
+globe : dünya, küre
+grade : derece, not
+guarantee : garanti, güvence
+hierarchy : hiyerarşi, sıra düzeni
+identical : aynı, özdeş
+ideology : ideoloji
+infer : çıkarım yapmak, sonuç çıkarmak
+innovate : yenilik yapmak
+insert : eklemek, sokmak
+intervene : müdahale etmek, araya girmek
+isolate : izole etmek, yalıtmak
+media : medya
+mode : mod, kip
+paradigm : paradigma, model
+phenomenon : olgu, fenomen
+priority : öncelik
+prohibit : yasaklamak
+publication : yayın
+quote : alıntı yapmak, fiyat vermek
+release : serbest bırakmak, yayımlamak
+reverse : ters çevirmek, tersine
+simulate : simüle etmek, taklit etmek
+sole : tek, yegâne
+somewhat : bir dereceye kadar, biraz
+submit : sunmak, teslim etmek
+successor : halef, ardıl
+survive : hayatta kalmak, ayakta kalmak
+thesis : tez
+topic : konu, başlık
+transmit : iletmek, aktarmak
+ultimate : nihai, en son
+unique : benzersiz, eşsiz
+visible : görünür, görülebilir
+voluntary : gönüllü
+abandon : terk etmek, vazgeçmek
+accompany : eşlik etmek
+accumulate : biriktirmek, toplamak
+ambiguous : belirsiz, muğlak
+append : eklemek, ilave etmek
+appreciate : takdir etmek, değer vermek
+arbitrary : keyfi, rastgele
+automate : otomatikleştirmek
+bias : önyargı, taraf tutma
+chart : tablo, grafik
+clarify : açıklığa kavuşturmak
+commodity : emtia, meta
+complement : tamamlamak, tümleç
+conform : uymak, uyum sağlamak
+contemporary : çağdaş, güncel
+contradict : çelişmek
+crucial : hayati, kritik
+currency : para birimi, geçerlilik
+denote : belirtmek, ifade etmek
+detect : tespit etmek, algılamak
+deviate : sapmak
+displace : yerinden etmek
+drama : drama, tiyatro
+eventual : nihai, son
+exhibit : sergilemek, sergi
+exploit : sömürmek, yararlanmak
+fluctuate : dalgalanmak
+guideline : kılavuz, yönerge
+highlight : vurgulamak, öne çıkarmak
+implicit : örtük, ima edilen
+induce : teşvik etmek, neden olmak
+inevitable : kaçınılmaz
+infrastructure : altyapı
+inspect : denetlemek, incelemek
+intense : yoğun, şiddetli
+manipulate : manipüle etmek, yönlendirmek
+minimise : en aza indirmek
+nuclear : nükleer
+offset : dengelemek, telafi etmek
+paragraph : paragraf
+plus : artı, ayrıca
+practitioner : uygulayıcı, meslek erbabı
+predominant : baskın, ağırlıklı
+prospect : olasılık, umut
+radical : köklü, radikal
+random : rastgele
+reinforce : güçlendirmek, pekiştirmek
+restore : geri yüklemek, eski haline getirmek
+revise : gözden geçirmek, revize etmek
+schedule : program, çizelge
+tense : gergin, zaman kipi
+terminate : sonlandırmak
+theme : tema, konu
+thereby : böylece, bu yolla
+uniform : tek tip, üniforma
+vehicle : araç, vasıta
+via : aracılığıyla, yoluyla
+virtual : sanal
+visual : görsel
+widespread : yaygın
+accommodate : barındırmak, uyum sağlamak
+analogy : benzetme, analoji
+anticipate : öngörmek, beklemek
+assure : güvence vermek, temin etmek
+attain : ulaşmak, elde etmek
+behalf : adına, namına
+bulk : yığın, toplu
+cease : durdurmak, sona ermek
+coherent : tutarlı, bağdaşık
+coincide : aynı zamana denk gelmek
+commence : başlamak
+compatible : uyumlu
+concurrent : eş zamanlı
+confine : sınırlamak, hapsetmek
+controversy : tartışma, polemik
+converse : konuşmak, sohbet etmek; zıt
+device : cihaz, aygıt
+devote : adamak, ayırmak
+diminish : azalmak, küçülmek
+distort : çarpıtmak, bozmak
+duration : süre
+erode : aşınmak, yıpranmak
+ethic : ahlak, etik
+format : biçim, format
+found : kurmak, tesis etmek
+inherent : doğasında olan, içkin
+insight : içgörü, kavrayış
+integral : ayrılmaz, bütünleyici
+intermediate : orta düzey, ara
+manual : el kitabı, elle yapılan
+mature : olgun, olgunlaşmak
+mediate : arabuluculuk yapmak
+medium : orta, ortam, araç
+military : askeri
+minimal : en az, asgari
+mutual : karşılıklı, ortak
+norm : norm, standart
+overlap : örtüşmek, çakışmak
+passive : edilgen, pasif
+portion : kısım, pay
+preliminary : ön, başlangıç niteliğinde
+protocol : protokol
+qualitative : nitel
+refine : arıtmak, iyileştirmek
+relax : rahatlamak, gevşetmek
+restrain : dizginlemek, kısıtlamak
+revolution : devrim
+rigid : katı, sert
+route : yol, rota
+scenario : senaryo
+sphere : küre, alan
+subordinate : ast, alt düzey
+supplement : ek, takviye
+suspend : askıya almak, ertelemek
+team : takım, ekip
+temporary : geçici
+trigger : tetiklemek, tetik
+unify : birleştirmek
+violate : ihlal etmek
+vision : vizyon, görüş
+adjacent : bitişik, komşu
+albeit : her ne kadar, gerçi
+assemble : bir araya getirmek, monte etmek
+collapse : çökmek, çöküş
+colleague : meslektaş
+compile : derlemek
+conceive : tasarlamak, gebe kalmak
+convince : ikna etmek
+depress : bunaltmak, bastırmak
+encounter : karşılaşmak
+enormous : devasa, muazzam
+forthcoming : yaklaşan, gelecek
+incline : eğilim göstermek, meyletmek
+integrity : bütünlük, dürüstlük
+intrinsic : özsel, doğasında olan
+invoke : başvurmak, çağırmak
+levy : vergi koymak
+likewise : aynı şekilde, benzer biçimde
+nonetheless : yine de, buna rağmen
+notwithstanding : rağmen, karşın
+odd : garip, tek (sayı)
+ongoing : devam eden, süregelen
+panel : panel, kurul
+persist : ısrar etmek, sürmek
+pose : ortaya koymak, poz vermek
+reluctance : isteksizlik, gönülsüzlük
+so-called : sözde
+straightforward : basit, doğrudan
+undergo : geçirmek, maruz kalmak
+whereby : bu sayede, bu yolla

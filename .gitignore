@@ -1,0 +1,48 @@
+.aider*
+
+# Gradle
+.gradle/
+# ローカル実行用に別名で指定した Gradle キャッシュ
+.gradle-user/
+build/
+
+# Android
+app/build/
+app/release/
+local.properties
+*.iml
+.idea/
+
+# 機密情報（APIキー等）を含むためコミットしない
+gradle.properties
+secrets.properties
+
+# Android署名鍵・署名設定（絶対にGitHubへアップロードしない）
+*.jks
+*.keystore
+*.keystore.jks
+keystore.properties
+signing.properties
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.log
+
+# macOS
+.DS_Store
+
+# 一時バックアップ
+vocabulary*.backup*
+
+# 語彙ビルダーの生成物
+tools/vocabulary-builder/output/
+
+# 語彙データ確認・API接続用の一時スクリプト
+tools/vocabulary-builder/analyze_data.py
+tools/vocabulary-builder/review_vocabulary.py
+tools/vocabulary-builder/test_deepseek.py

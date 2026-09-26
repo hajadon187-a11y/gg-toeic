@@ -1,0 +1,2931 @@
+{
+ "description": "TOEFLキャンパスライフ・講義トピックの追加語リスト。既存 vocabulary.json と内部重複を除いた決定版。",
+ "counts": {
+  "level3": 129,
+  "level4": 185,
+  "total": 314
+ },
+ "words": [
+  {
+   "word": "corequisite",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "matriculate",
+   "level": 4,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "absentee",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "truancy",
+   "level": 4,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "advisee",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "placement",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "remedial",
+   "level": 4,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "probation",
+   "level": 4,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "expulsion",
+   "level": 4,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "matric",
+   "level": 4,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "periodical",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "archival",
+   "level": 4,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "overdue",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "librarian",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "microfiche",
+   "level": 4,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "paraphrase",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "monograph",
+   "level": 4,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "anthology",
+   "level": 4,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "dorm",
+   "level": 3,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "residence",
+   "level": 3,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "cafeteria",
+   "level": 3,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "laundry",
+   "level": 3,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "utilities",
+   "level": 4,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "lease",
+   "level": 3,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "landlord",
+   "level": 3,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "sublet",
+   "level": 4,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "commuter",
+   "level": 3,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "chore",
+   "level": 3,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "quadrangle",
+   "level": 4,
+   "topic": "Education",
+   "domain": "寮・学生生活"
+  },
+  {
+   "word": "gymnasium",
+   "level": 3,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "booth",
+   "level": 3,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "kiosk",
+   "level": 3,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "venue",
+   "level": 3,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "annex",
+   "level": 4,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "roundtable",
+   "level": 4,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "fieldwork",
+   "level": 4,
+   "topic": "Science",
+   "domain": "研究・論文"
+  },
+  {
+   "word": "rationale",
+   "level": 3,
+   "topic": "Science",
+   "domain": "研究・論文"
+  },
+  {
+   "word": "sabbatical",
+   "level": 4,
+   "topic": "Education",
+   "domain": "研究・論文"
+  },
+  {
+   "word": "postdoctoral",
+   "level": 4,
+   "topic": "Education",
+   "domain": "研究・論文"
+  },
+  {
+   "word": "didactic",
+   "level": 4,
+   "topic": "Education",
+   "domain": "研究・論文"
+  },
+  {
+   "word": "examiner",
+   "level": 3,
+   "topic": "Education",
+   "domain": "試験"
+  },
+  {
+   "word": "rubric",
+   "level": 4,
+   "topic": "Education",
+   "domain": "試験"
+  },
+  {
+   "word": "invigilate",
+   "level": 4,
+   "topic": "Education",
+   "domain": "試験"
+  },
+  {
+   "word": "invigilator",
+   "level": 4,
+   "topic": "Education",
+   "domain": "試験"
+  },
+  {
+   "word": "grade point average",
+   "level": 4,
+   "topic": "Education",
+   "domain": "試験"
+  },
+  {
+   "word": "reinforcement",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "perceptual",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "amnesia",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "temperament",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "extrovert",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "introversion",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "self-esteem",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "frustration",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "empathy",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "aggression",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "conformity",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "self-fulfilling prophecy",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "cognitive dissonance",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "behaviorism",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "therapist",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "placebo",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "bystander",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "mindset",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "long-term potentiation",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "astronomer",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "telescope",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "orbit",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "orbital",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "planetary",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "comet",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "meteorite",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "asteroid",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "lunar",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "constellation",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "nebula",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "supernova",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "spectral",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "magma",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "lava",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "volcano",
+   "level": 3,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "volcanic",
+   "level": 3,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "eruption",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "crater",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "earthquake",
+   "level": 3,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "tsunami",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "plateau",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "canyon",
+   "level": 3,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "glacier",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "glacial",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "erosion",
+   "level": 3,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "strata",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "tectonic",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "mantle",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "archaeological",
+   "level": 3,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "archaeologist",
+   "level": 3,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "excavation",
+   "level": 4,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "excavate",
+   "level": 4,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "ruins",
+   "level": 3,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "relic",
+   "level": 4,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "stratigraphy",
+   "level": 4,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "radiocarbon",
+   "level": 4,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "carbon dating",
+   "level": 4,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "chronology",
+   "level": 4,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "excavator",
+   "level": 4,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "photosynthesis",
+   "level": 3,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "symbiosis",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "endowment",
+   "level": 4,
+   "topic": "Education",
+   "domain": "学費・資金"
+  },
+  {
+   "word": "installment",
+   "level": 4,
+   "topic": "Education",
+   "domain": "学費・資金"
+  },
+  {
+   "word": "alumni",
+   "level": 3,
+   "topic": "Education",
+   "domain": "学費・資金"
+  },
+  {
+   "word": "fundraising",
+   "level": 4,
+   "topic": "Education",
+   "domain": "学費・資金"
+  },
+  {
+   "word": "semantics",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "rhetorical",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "aesthetics",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "ethnography",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "ethnographic",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "historiography",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "syllabi",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "enrollee",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "paperwork",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "clerical",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "applicant",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "transferable",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "retake",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "makeup",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "grading",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "pass-fail",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "honors",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "semester-long",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "adjunct",
+   "level": 4,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "prorated",
+   "level": 4,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "noncredit",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "refundable",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "mandatory",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "required",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "open-ended",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "half-credit",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "checklist",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "worksheet",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "notification",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "acceptance",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "deadline extension",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  },
+  {
+   "word": "out-of-state",
+   "level": 3,
+   "topic": "Education",
+   "domain": "学費・資金"
+  },
+  {
+   "word": "in-state",
+   "level": 3,
+   "topic": "Education",
+   "domain": "学費・資金"
+  },
+  {
+   "word": "fee waiver",
+   "level": 3,
+   "topic": "Education",
+   "domain": "学費・資金"
+  },
+  {
+   "word": "need-based",
+   "level": 3,
+   "topic": "Education",
+   "domain": "学費・資金"
+  },
+  {
+   "word": "merit-based",
+   "level": 3,
+   "topic": "Education",
+   "domain": "学費・資金"
+  },
+  {
+   "word": "bursar",
+   "level": 3,
+   "topic": "Education",
+   "domain": "学費・資金"
+  },
+  {
+   "word": "bookstore",
+   "level": 3,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "photocopier",
+   "level": 3,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "vending",
+   "level": 3,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "orientation week",
+   "level": 3,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "bulletin board",
+   "level": 3,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "lounge",
+   "level": 3,
+   "topic": "Education",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "greenhouse",
+   "level": 3,
+   "topic": "Science",
+   "domain": "キャンパス施設"
+  },
+  {
+   "word": "checkout",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "encyclopedia",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "almanac",
+   "level": 4,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "atlas",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "thesaurus",
+   "level": 4,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "handbook",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "spine",
+   "level": 4,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "bookmark",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "search engine",
+   "level": 3,
+   "topic": "Technology",
+   "domain": "図書館"
+  },
+  {
+   "word": "keyword",
+   "level": 3,
+   "topic": "Technology",
+   "domain": "図書館"
+  },
+  {
+   "word": "interlibrary loan",
+   "level": 4,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "course reserve",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "reading room",
+   "level": 3,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "call number",
+   "level": 4,
+   "topic": "Education",
+   "domain": "図書館"
+  },
+  {
+   "word": "instructor",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "teaching assistant",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "attendance policy",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "readings",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "whiteboard",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "group work",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "brainstorm",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "note-taking",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "podcast",
+   "level": 4,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "distraction",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "off-topic",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "clarification",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "question-and-answer",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "recap",
+   "level": 3,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "elaboration",
+   "level": 4,
+   "topic": "Education",
+   "domain": "講義・発表"
+  },
+  {
+   "word": "asteroid belt",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "satellite",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "spacecraft",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "observatory",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "sunspot",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "equinox",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "solstice",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "phases of the moon",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "tidal",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "stellar",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "interstellar",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "light-year",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "space exploration",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "weightlessness",
+   "level": 3,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "vacuum",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "greenhouse effect",
+   "level": 3,
+   "topic": "Environment",
+   "domain": "天文学"
+  },
+  {
+   "word": "terrestrial",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "celestial",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "zenith",
+   "level": 4,
+   "topic": "Science",
+   "domain": "天文学"
+  },
+  {
+   "word": "boulder",
+   "level": 3,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "bedrock",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "outcrop",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "crevice",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "weathering",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "granite",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "shale",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "geothermal",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "magnitude scale",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "epicenter",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "continental drift",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "subduction",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "landform",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "tributary",
+   "level": 4,
+   "topic": "Science",
+   "domain": "地質学"
+  },
+  {
+   "word": "prehistoric",
+   "level": 3,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "nomadic",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "pottery",
+   "level": 3,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "burial",
+   "level": 3,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "tomb",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "monument",
+   "level": 3,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "stele",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "inscription",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "decipher",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "hieroglyph",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "mound",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "dwelling",
+   "level": 3,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "sedentary",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "flint",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "predate",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "provenance",
+   "level": 4,
+   "topic": "Society",
+   "domain": "考古学"
+  },
+  {
+   "word": "meticulous",
+   "level": 4,
+   "topic": "Science",
+   "domain": "考古学"
+  },
+  {
+   "word": "synapse",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "dopamine",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "serotonin",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "sleep cycle",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "REM sleep",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "insomnia",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "hypnosis",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "anecdotal",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "encoding",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "flashbulb memory",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "interference",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "mnemonic",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "rote",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "IQ",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "agoraphobia",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "self-actualization",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "hierarchy of needs",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "obedience",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "attribution",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "ingroup",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "outgroup",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "groupthink",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "deindividuation",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "reciprocity",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "nurture",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "heredity",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "counselor",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "arousal",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "kinesthetic",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "left-brain",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "occipital",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "anxiety disorder",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "long-term memory",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "working memory",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "short-term memory",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "mental health",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "reward system",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "classical conditioning",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "operant",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "observational learning",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "stages of development",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "ego",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "lucid",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "neurotransmitter",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "amygdala",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "hippocampus",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "hemisphere",
+   "level": 3,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "lateralization",
+   "level": 4,
+   "topic": "Science",
+   "domain": "心理学"
+  },
+  {
+   "word": "chlorophyll",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "cell division",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "mitosis",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "chloroplast",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "microbe",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "parasite",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "camouflage",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "nocturnal",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "germinate",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "pollination",
+   "level": 4,
+   "topic": "Science",
+   "domain": "生物学"
+  },
+  {
+   "word": "canopy",
+   "level": 4,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "food chain",
+   "level": 3,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "food web",
+   "level": 4,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "acid rain",
+   "level": 4,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "extinction",
+   "level": 3,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "overgrazing",
+   "level": 4,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "deforestation",
+   "level": 4,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "emissions",
+   "level": 3,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "fossil fuel",
+   "level": 3,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "carbon footprint",
+   "level": 4,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "biomass",
+   "level": 4,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "melting",
+   "level": 3,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "silt",
+   "level": 4,
+   "topic": "Environment",
+   "domain": "生態学"
+  },
+  {
+   "word": "census",
+   "level": 3,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "archive footage",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "primary source",
+   "level": 3,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "secondary source",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "annotated",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "seminar paper",
+   "level": 3,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "vernacular",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "orthography",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "curator",
+   "level": 4,
+   "topic": "Society",
+   "domain": "人文系講義"
+  },
+  {
+   "word": "syllabus week",
+   "level": 3,
+   "topic": "Education",
+   "domain": "履修登録"
+  }
+ ],
+ "excluded": {
+  "already_in_vocabulary": [
+   {
+    "word": "enroll",
+    "existing_level": 2
+   },
+   {
+    "word": "enrollment",
+    "existing_level": 2
+   },
+   {
+    "word": "prerequisite",
+    "existing_level": 5
+   },
+   {
+    "word": "elective",
+    "existing_level": 3
+   },
+   {
+    "word": "semester",
+    "existing_level": 2
+   },
+   {
+    "word": "quarter",
+    "existing_level": 2
+   },
+   {
+    "word": "credit",
+    "existing_level": 2
+   },
+   {
+    "word": "transcript",
+    "existing_level": 3
+   },
+   {
+    "word": "registrar",
+    "existing_level": 2
+   },
+   {
+    "word": "matriculation",
+    "existing_level": 5
+   },
+   {
+    "word": "audit",
+    "existing_level": 3
+   },
+   {
+    "word": "withdraw",
+    "existing_level": 2
+   },
+   {
+    "word": "dropout",
+    "existing_level": 3
+   },
+   {
+    "word": "attendance",
+    "existing_level": 3
+   },
+   {
+    "word": "deadline",
+    "existing_level": 3
+   },
+   {
+    "word": "orientation",
+    "existing_level": 4
+   },
+   {
+    "word": "advisor",
+    "existing_level": 2
+   },
+   {
+    "word": "rotation",
+    "existing_level": 3
+   },
+   {
+    "word": "sequence",
+    "existing_level": 2
+   },
+   {
+    "word": "concentration",
+    "existing_level": 2
+   },
+   {
+    "word": "major",
+    "existing_level": 1
+   },
+   {
+    "word": "minor",
+    "existing_level": 2
+   },
+   {
+    "word": "degree",
+    "existing_level": 1
+   },
+   {
+    "word": "cumulative",
+    "existing_level": 5
+   },
+   {
+    "word": "exemption",
+    "existing_level": 5
+   },
+   {
+    "word": "waiver",
+    "existing_level": 5
+   },
+   {
+    "word": "eligibility",
+    "existing_level": 5
+   },
+   {
+    "word": "catalog",
+    "existing_level": 2
+   },
+   {
+    "word": "journal",
+    "existing_level": 2
+   },
+   {
+    "word": "archive",
+    "existing_level": 3
+   },
+   {
+    "word": "circulation",
+    "existing_level": 3
+   },
+   {
+    "word": "bibliography",
+    "existing_level": 4
+   },
+   {
+    "word": "citation",
+    "existing_level": 3
+   },
+   {
+    "word": "plagiarism",
+    "existing_level": 5
+   },
+   {
+    "word": "reference",
+    "existing_level": 2
+   },
+   {
+    "word": "stack",
+    "existing_level": 2
+   },
+   {
+    "word": "manuscript",
+    "existing_level": 4
+   },
+   {
+    "word": "reserve",
+    "existing_level": 2
+   },
+   {
+    "word": "renewal",
+    "existing_level": 5
+   },
+   {
+    "word": "prospectus",
+    "existing_level": 5
+   },
+   {
+    "word": "dormitory",
+    "existing_level": 2
+   },
+   {
+    "word": "roommate",
+    "existing_level": 2
+   },
+   {
+    "word": "resident",
+    "existing_level": 2
+   },
+   {
+    "word": "hall",
+    "existing_level": 2
+   },
+   {
+    "word": "tenant",
+    "existing_level": 2
+   },
+   {
+    "word": "commute",
+    "existing_level": 2
+   },
+   {
+    "word": "shuttle",
+    "existing_level": 3
+   },
+   {
+    "word": "curfew",
+    "existing_level": 3
+   },
+   {
+    "word": "auditorium",
+    "existing_level": 2
+   },
+   {
+    "word": "laboratory",
+    "existing_level": 2
+   },
+   {
+    "word": "facility",
+    "existing_level": 2
+   },
+   {
+    "word": "lecture",
+    "existing_level": 2
+   },
+   {
+    "word": "lecturer",
+    "existing_level": 3
+   },
+   {
+    "word": "seminar",
+    "existing_level": 3
+   },
+   {
+    "word": "colloquium",
+    "existing_level": 4
+   },
+   {
+    "word": "symposium",
+    "existing_level": 5
+   },
+   {
+    "word": "workshop",
+    "existing_level": 2
+   },
+   {
+    "word": "tutorial",
+    "existing_level": 2
+   },
+   {
+    "word": "handout",
+    "existing_level": 3
+   },
+   {
+    "word": "outline",
+    "existing_level": 2
+   },
+   {
+    "word": "discipline",
+    "existing_level": 2
+   },
+   {
+    "word": "presentation",
+    "existing_level": 2
+   },
+   {
+    "word": "audience",
+    "existing_level": 2
+   },
+   {
+    "word": "panel",
+    "existing_level": 2
+   },
+   {
+    "word": "respondent",
+    "existing_level": 4
+   },
+   {
+    "word": "commentary",
+    "existing_level": 3
+   },
+   {
+    "word": "syllabus",
+    "existing_level": 3
+   },
+   {
+    "word": "thesis",
+    "existing_level": 4
+   },
+   {
+    "word": "dissertation",
+    "existing_level": 3
+   },
+   {
+    "word": "mentor",
+    "existing_level": 3
+   },
+   {
+    "word": "empirical",
+    "existing_level": 3
+   },
+   {
+    "word": "questionnaire",
+    "existing_level": 3
+   },
+   {
+    "word": "validity",
+    "existing_level": 4
+   },
+   {
+    "word": "replicate",
+    "existing_level": 4
+   },
+   {
+    "word": "longitudinal",
+    "existing_level": 4
+   },
+   {
+    "word": "correlation",
+    "existing_level": 3
+   },
+   {
+    "word": "variable",
+    "existing_level": 2
+   },
+   {
+    "word": "threshold",
+    "existing_level": 3
+   },
+   {
+    "word": "hypothesize",
+    "existing_level": 4
+   },
+   {
+    "word": "parameter",
+    "existing_level": 4
+   },
+   {
+    "word": "peer",
+    "existing_level": 2
+   },
+   {
+    "word": "academia",
+    "existing_level": 3
+   },
+   {
+    "word": "academician",
+    "existing_level": 4
+   },
+   {
+    "word": "tenure",
+    "existing_level": 4
+   },
+   {
+    "word": "stipend",
+    "existing_level": 3
+   },
+   {
+    "word": "fellowship",
+    "existing_level": 5
+   },
+   {
+    "word": "curriculum",
+    "existing_level": 3
+   },
+   {
+    "word": "pedagogy",
+    "existing_level": 5
+   },
+   {
+    "word": "pedagogical",
+    "existing_level": 5
+   },
+   {
+    "word": "integrity",
+    "existing_level": 4
+   },
+   {
+    "word": "proctor",
+    "existing_level": 3
+   },
+   {
+    "word": "psychology",
+    "existing_level": 3
+   },
+   {
+    "word": "psychological",
+    "existing_level": 3
+   },
+   {
+    "word": "stimulus",
+    "existing_level": 4
+   },
+   {
+    "word": "conditioning",
+    "existing_level": 5
+   },
+   {
+    "word": "perception",
+    "existing_level": 2
+   },
+   {
+    "word": "cognitive",
+    "existing_level": 3
+   },
+   {
+    "word": "retention",
+    "existing_level": 5
+   },
+   {
+    "word": "recall",
+    "existing_level": 2
+   },
+   {
+    "word": "introvert",
+    "existing_level": 4
+   },
+   {
+    "word": "motivation",
+    "existing_level": 3
+   },
+   {
+    "word": "anxiety",
+    "existing_level": 3
+   },
+   {
+    "word": "phobia",
+    "existing_level": 3
+   },
+   {
+    "word": "depression",
+    "existing_level": 2
+   },
+   {
+    "word": "unconscious",
+    "existing_level": 3
+   },
+   {
+    "word": "subconscious",
+    "existing_level": 4
+   },
+   {
+    "word": "sympathy",
+    "existing_level": 2
+   },
+   {
+    "word": "altruism",
+    "existing_level": 4
+   },
+   {
+    "word": "prejudice",
+    "existing_level": 3
+   },
+   {
+    "word": "stereotype",
+    "existing_level": 4
+   },
+   {
+    "word": "psychoanalysis",
+    "existing_level": 4
+   },
+   {
+    "word": "resilience",
+    "existing_level": 3
+   },
+   {
+    "word": "astronomy",
+    "existing_level": 3
+   },
+   {
+    "word": "astronomical",
+    "existing_level": 3
+   },
+   {
+    "word": "galaxy",
+    "existing_level": 2
+   },
+   {
+    "word": "galactic",
+    "existing_level": 4
+   },
+   {
+    "word": "planet",
+    "existing_level": 2
+   },
+   {
+    "word": "solar",
+    "existing_level": 3
+   },
+   {
+    "word": "eclipse",
+    "existing_level": 3
+   },
+   {
+    "word": "gravity",
+    "existing_level": 3
+   },
+   {
+    "word": "cosmic",
+    "existing_level": 4
+   },
+   {
+    "word": "cosmology",
+    "existing_level": 5
+   },
+   {
+    "word": "spectrum",
+    "existing_level": 4
+   },
+   {
+    "word": "radiation",
+    "existing_level": 3
+   },
+   {
+    "word": "geology",
+    "existing_level": 3
+   },
+   {
+    "word": "geological",
+    "existing_level": 3
+   },
+   {
+    "word": "geologist",
+    "existing_level": 3
+   },
+   {
+    "word": "fault",
+    "existing_level": 2
+   },
+   {
+    "word": "seismic",
+    "existing_level": 3
+   },
+   {
+    "word": "sediment",
+    "existing_level": 4
+   },
+   {
+    "word": "sedimentary",
+    "existing_level": 5
+   },
+   {
+    "word": "mineral",
+    "existing_level": 3
+   },
+   {
+    "word": "fossil",
+    "existing_level": 3
+   },
+   {
+    "word": "core",
+    "existing_level": 2
+   },
+   {
+    "word": "archaeology",
+    "existing_level": 3
+   },
+   {
+    "word": "artifact",
+    "existing_level": 3
+   },
+   {
+    "word": "settlement",
+    "existing_level": 2
+   },
+   {
+    "word": "organism",
+    "existing_level": 3
+   },
+   {
+    "word": "membrane",
+    "existing_level": 4
+   },
+   {
+    "word": "enzyme",
+    "existing_level": 3
+   },
+   {
+    "word": "protein",
+    "existing_level": 2
+   },
+   {
+    "word": "metabolism",
+    "existing_level": 4
+   },
+   {
+    "word": "evolutionary",
+    "existing_level": 3
+   },
+   {
+    "word": "predator",
+    "existing_level": 3
+   },
+   {
+    "word": "molecule",
+    "existing_level": 3
+   },
+   {
+    "word": "compound",
+    "existing_level": 3
+   },
+   {
+    "word": "catalyst",
+    "existing_level": 5
+   },
+   {
+    "word": "solvent",
+    "existing_level": 4
+   },
+   {
+    "word": "reaction",
+    "existing_level": 2
+   },
+   {
+    "word": "friction",
+    "existing_level": 3
+   },
+   {
+    "word": "velocity",
+    "existing_level": 4
+   },
+   {
+    "word": "momentum",
+    "existing_level": 3
+   },
+   {
+    "word": "equilibrium",
+    "existing_level": 3
+   },
+   {
+    "word": "thermal",
+    "existing_level": 3
+   },
+   {
+    "word": "magnetic",
+    "existing_level": 2
+   },
+   {
+    "word": "ecosystem",
+    "existing_level": 3
+   },
+   {
+    "word": "habitat",
+    "existing_level": 3
+   },
+   {
+    "word": "biodiversity",
+    "existing_level": 3
+   },
+   {
+    "word": "sustainable",
+    "existing_level": 4
+   },
+   {
+    "word": "conservation",
+    "existing_level": 3
+   },
+   {
+    "word": "depletion",
+    "existing_level": 4
+   },
+   {
+    "word": "grant",
+    "existing_level": 2
+   },
+   {
+    "word": "loan",
+    "existing_level": 2
+   },
+   {
+    "word": "reimbursement",
+    "existing_level": 4
+   },
+   {
+    "word": "philanthropy",
+    "existing_level": 4
+   },
+   {
+    "word": "philanthropist",
+    "existing_level": 5
+   },
+   {
+    "word": "philosophy",
+    "existing_level": 3
+   },
+   {
+    "word": "philosophical",
+    "existing_level": 3
+   },
+   {
+    "word": "ethics",
+    "existing_level": 3
+   },
+   {
+    "word": "ethical",
+    "existing_level": 3
+   },
+   {
+    "word": "linguistics",
+    "existing_level": 4
+   },
+   {
+    "word": "linguistic",
+    "existing_level": 4
+   },
+   {
+    "word": "syntax",
+    "existing_level": 4
+   },
+   {
+    "word": "rhetoric",
+    "existing_level": 4
+   },
+   {
+    "word": "aesthetic",
+    "existing_level": 3
+   },
+   {
+    "word": "artistic",
+    "existing_level": 3
+   },
+   {
+    "word": "sculpture",
+    "existing_level": 2
+   },
+   {
+    "word": "narrative",
+    "existing_level": 3
+   },
+   {
+    "word": "composition",
+    "existing_level": 3
+   },
+   {
+    "word": "registration",
+    "existing_level": 3
+   },
+   {
+    "word": "form",
+    "existing_level": 1
+   },
+   {
+    "word": "application",
+    "existing_level": 2
+   },
+   {
+    "word": "admission",
+    "existing_level": 3
+   },
+   {
+    "word": "intensive",
+    "existing_level": 3
+   },
+   {
+    "word": "confirmation",
+    "existing_level": 3
+   },
+   {
+    "word": "tuition",
+    "existing_level": 3
+   },
+   {
+    "word": "fee",
+    "existing_level": 2
+   },
+   {
+    "word": "financial",
+    "existing_level": 1
+   },
+   {
+    "word": "textbook",
+    "existing_level": 2
+   },
+   {
+    "word": "dictionary",
+    "existing_level": 2
+   },
+   {
+    "word": "abstract",
+    "existing_level": 3
+   },
+   {
+    "word": "index",
+    "existing_level": 2
+   },
+   {
+    "word": "scanner",
+    "existing_level": 2
+   },
+   {
+    "word": "database",
+    "existing_level": 2
+   },
+   {
+    "word": "subscription",
+    "existing_level": 3
+   },
+   {
+    "word": "faculty",
+    "existing_level": 3
+   },
+   {
+    "word": "professor",
+    "existing_level": 2
+   },
+   {
+    "word": "text",
+    "existing_level": 2
+   },
+   {
+    "word": "overhead",
+    "existing_level": 4
+   },
+   {
+    "word": "slide",
+    "existing_level": 2
+   },
+   {
+    "word": "overview",
+    "existing_level": 3
+   },
+   {
+    "word": "summary",
+    "existing_level": 3
+   },
+   {
+    "word": "probe",
+    "existing_level": 4
+   },
+   {
+    "word": "atmosphere",
+    "existing_level": 2
+   },
+   {
+    "word": "magnitude",
+    "existing_level": 4
+   },
+   {
+    "word": "fissure",
+    "existing_level": 4
+   },
+   {
+    "word": "sedimentation",
+    "existing_level": 4
+   },
+   {
+    "word": "crystal",
+    "existing_level": 3
+   },
+   {
+    "word": "quartz",
+    "existing_level": 3
+   },
+   {
+    "word": "deposit",
+    "existing_level": 3
+   },
+   {
+    "word": "civilization",
+    "existing_level": 3
+   },
+   {
+    "word": "hunter-gatherer",
+    "existing_level": 5
+   },
+   {
+    "word": "paleontology",
+    "existing_level": 4
+   },
+   {
+    "word": "cortex",
+    "existing_level": 3
+   },
+   {
+    "word": "neuron",
+    "existing_level": 4
+   },
+   {
+    "word": "hormone",
+    "existing_level": 3
+   },
+   {
+    "word": "implicit",
+    "existing_level": 4
+   },
+   {
+    "word": "explicit",
+    "existing_level": 3
+   },
+   {
+    "word": "recognition",
+    "existing_level": 2
+   },
+   {
+    "word": "aptitude",
+    "existing_level": 4
+   },
+   {
+    "word": "developmental",
+    "existing_level": 3
+   },
+   {
+    "word": "attachment",
+    "existing_level": 3
+   },
+   {
+    "word": "compliance",
+    "existing_level": 5
+   },
+   {
+    "word": "socialization",
+    "existing_level": 3
+   },
+   {
+    "word": "personality",
+    "existing_level": 2
+   },
+   {
+    "word": "therapy",
+    "existing_level": 3
+   },
+   {
+    "word": "counseling",
+    "existing_level": 3
+   },
+   {
+    "word": "symptom",
+    "existing_level": 2
+   },
+   {
+    "word": "diagnosis",
+    "existing_level": 3
+   },
+   {
+    "word": "disorder",
+    "existing_level": 2
+   },
+   {
+    "word": "impulse",
+    "existing_level": 3
+   },
+   {
+    "word": "fatigue",
+    "existing_level": 3
+   },
+   {
+    "word": "appraisal",
+    "existing_level": 5
+   },
+   {
+    "word": "resilient",
+    "existing_level": 3
+   },
+   {
+    "word": "subjective",
+    "existing_level": 4
+   },
+   {
+    "word": "motivated",
+    "existing_level": 2
+   },
+   {
+    "word": "incentive",
+    "existing_level": 3
+   },
+   {
+    "word": "nutrient",
+    "existing_level": 3
+   },
+   {
+    "word": "bacteria",
+    "existing_level": 3
+   },
+   {
+    "word": "antibody",
+    "existing_level": 3
+   },
+   {
+    "word": "immunity",
+    "existing_level": 3
+   },
+   {
+    "word": "specimen",
+    "existing_level": 4
+   },
+   {
+    "word": "vegetation",
+    "existing_level": 3
+   },
+   {
+    "word": "endangered",
+    "existing_level": 3
+   },
+   {
+    "word": "irrigation",
+    "existing_level": 4
+   },
+   {
+    "word": "pesticide",
+    "existing_level": 3
+   },
+   {
+    "word": "renewable",
+    "existing_level": 3
+   },
+   {
+    "word": "watershed",
+    "existing_level": 4
+   },
+   {
+    "word": "conservationist",
+    "existing_level": 4
+   },
+   {
+    "word": "biodegradable",
+    "existing_level": 3
+   },
+   {
+    "word": "offset",
+    "existing_level": 4
+   },
+   {
+    "word": "demographic",
+    "existing_level": 5
+   },
+   {
+    "word": "discourse",
+    "existing_level": 3
+   },
+   {
+    "word": "dialect",
+    "existing_level": 3
+   },
+   {
+    "word": "bilingual",
+    "existing_level": 3
+   },
+   {
+    "word": "exhibit",
+    "existing_level": 2
+   },
+   {
+    "word": "footnote",
+    "existing_level": 3
+   },
+   {
+    "word": "premise",
+    "existing_level": 2
+   }
+  ],
+  "duplicate_in_candidates": []
+ }
+}
