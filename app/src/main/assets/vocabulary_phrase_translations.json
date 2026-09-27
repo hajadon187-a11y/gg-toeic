@@ -113058,7 +113058,7 @@
         "vi": "xã hội phụ hệ, dòng dõi theo cha, chế độ phụ hệ, thừa kế theo dòng cha, dòng tộc theo cha",
         "ko": "부계 사회, 부계 혈통, 부계 제도, 부계 상속, 부계 계보",
         "id": "masyarakat patrilineal, garis keturunan patrilineal, sistem patrilineal, pewarisan patrilineal, silsilah patrilineal",
-        "th": "สังคมสืบสายทางบิดา, เชื้อสายทางบิดา, ระบบสืบสายทางบิดา, การ наслед наслед?",
+        "th": "สังคมสืบสายทางบิดา, เชื้อสายทางบิดา, ระบบสืบสายทางบิดา, การรับมรดกตามสายบิดา, สายตระกูลทางบิดา",
         "en": "patrilineal society, patrilineal descent, patrilineal system, patrilineal inheritance, patrilineal lineage",
         "es": "sociedad patrilineal, descendencia patrilineal, sistema patrilineal, herencia patrilineal, linaje patrilineal"
       },
@@ -117204,7 +117204,7 @@
         "vi": "Do camera an ninh không hoạt động, bằng chứng chống lại nhà thầu chỉ là chứng cứ gián tiếp, nên công ty bảo hiểm hoãn quyết định về yêu cầu bồi thường.",
         "ko": "보안 카메라가 작동하지 않아 계약업체를 상대로 한 증거는 정황 증거에 불과했고, 보험사는 보험금 청구 결정을 미뤘다.",
         "id": "Karena kamera keamanan tidak berfungsi, bukti yang memberatkan kontraktor hanya bersifat tidak langsung, sehingga perusahaan asuransi menunda keputusan klaim.",
-        "th": "เนื่องจากกล้องรักษาความปลอดภัยไม่ทำงาน หลักฐานที่กล่าวหา подрядผู้รับเหมาจึงเป็นเพียงพยานแวดล้อม บริษัทประกันจึงเลื่อนการตัดสินใจเรื่องเคลม",
+        "th": "เนื่องจากกล้องรักษาความปลอดภัยไม่ทำงาน หลักฐานที่กล่าวหาผู้รับเหมาจึงเป็นเพียงพยานแวดล้อม บริษัทประกันจึงเลื่อนการตัดสินใจเรื่องเคลม",
         "es": "Como la cámara de seguridad no funcionaba, las pruebas contra el contratista eran circunstanciales y la aseguradora aplazó su decisión sobre la reclamación.",
         "en": "Because the security camera was offline, the evidence against the contractor was circumstantial, so the insurer delayed its claim decision."
       }
@@ -135958,7 +135958,7 @@
     "builtin:5238": {
       "collocations": {
         "source": "nasty habit, nasty weather, nasty comment, nasty surprise, nasty injury",
-        "ja": "悪い癖, ひどい天気, ひどい発言,  неприятный сюрприз, 重傷",
+        "ja": "悪い癖, ひどい天気, ひどい発言, 不快な驚き, 重傷",
         "zh": "坏习惯, 恶劣天气, 刻薄的话, 糟糕的意外, 重伤",
         "hi": "बुरी आदत, खराब मौसम, कटु टिप्पणी, अप्रिय आश्चर्य, गंभीर चोट",
         "vi": "thói quen xấu, thời tiết khắc nghiệt, lời nhận xét khó nghe, bất ngờ khó chịu, chấn thương nghiêm trọng",
