@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Review 700+ examples 1051-1200 in English and Japanese."""
+from __future__ import annotations
+import json
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+VOCAB_PATH=ROOT/"app/src/main/assets/vocabulary.json"
+PHRASE_PATH=ROOT/"app/src/main/assets/vocabulary_phrase_translations.json"
+
+EN={
+"nominate":"The committee will nominate a chair for the new project.",
+"avenue":"The company is exploring every avenue for reducing delivery costs.",
+"consistently":"The branch consistently receives high customer ratings.",
+"sympathy":"The manager expressed sympathy to the employee after the accident.",
+"appreciation":"The director gave a certificate in appreciation of the team's work.",
+"enclosed":"Please find the signed contract enclosed with this letter.",
+"anatomy":"The training explains the anatomy of the shoulder to warehouse workers.",
+"reconstruction":"The reconstruction of the old station will begin in April.",
+"clarity":"The editor improved the clarity of the safety instructions.",
+"suburban":"The company opened a suburban branch to serve growing neighborhoods.",
+"intimate":"The restaurant provides an intimate setting for small business dinners.",
+"beneficial":"The new schedule has been beneficial to both staff and customers.",
+"threatened":"The coastal road was threatened by severe flooding.",
+"striking":"The report contains a striking difference between the two regions.",
+"retained":"The company retained its best employees by improving benefits.",
+"terrorism":"The airport reviews its security procedures to prevent terrorism.",
+"timeline":"The project manager updated the construction timeline.",
+"outlined":"The director outlined the goals for the next quarter.",
+"moisture":"The packaging protects the equipment from moisture.",
+"defining":"Customer trust is a defining feature of the company's brand.",
+"infected":"The IT team removed the infected computer from the network.",
+"courtesy":"The hotel offers a courtesy shuttle to guests.",
+"isolation":"The technician placed the damaged unit in isolation for testing.",
+"inspired":"The new product was inspired by suggestions from customers.",
+"disposal":"The company arranged safe disposal of the old chemicals.",
+"screening":"All applicants undergo a screening interview before hiring.",
+"paradise":"The resort advertises the island as a tropical paradise.",
+"freelance":"The magazine hired a freelance photographer for the event.",
+"excessive":"The auditor questioned the excessive cost of the business trip.",
+"supposed":"The package was supposed to arrive by noon.",
+"cellular":"The monitoring device uses a cellular connection.",
+"tracking":"The customer can check the shipment's tracking information online.",
+"handling":"Employees receive training in the safe handling of chemicals.",
+"merchant":"The online merchant offered a refund for the missing item.",
+"attorney":"The attorney reviewed the lease before the company signed it.",
+"inherit":"The new director will inherit responsibility for the regional offices.",
+"discard":"Do not discard the receipt until the warranty expires.",
+"corrupt":"The security team found a corrupt file on the shared server.",
+"cherish":"The founder continues to cherish the company's original values.",
+"novelty":"The novelty of the new app attracted many early users.",
+"meditation":"The wellness program offers meditation sessions during lunch.",
+"phantom":"The technician traced the phantom noise to a loose panel.",
+"invisible":"The protective coating is invisible after it dries.",
+"prophet":"The analyst was not a prophet, but the demand forecast was accurate.",
+"backing":"The startup received financial backing from a local investor.",
+"financing":"The bank approved financing for the warehouse expansion.",
+"expired":"The customer could not use the coupon because it had expired.",
+"biography":"The museum published a biography of the company's founder.",
+"madness":"The manager called the last-minute schedule change complete madness.",
+"texture":"The designer selected a fabric with a soft texture for the uniforms.",
+"dedicated":"The company opened a dedicated helpline for business customers.",
+"modelling":"The analyst used financial modelling to compare the investment plans.",
+"miracle":"The repair was not a miracle; the technician had replaced the main part.",
+"perceived":"Customers perceived the new service as faster and more reliable.",
+"inquire":"Please inquire at the front desk about meeting-room availability.",
+"geological":"The survey identified a geological risk near the construction site.",
+"lasting":"The training aims to create lasting improvements in service quality.",
+"assured":"The manager assured the client that the issue would be fixed.",
+"twisted":"The technician replaced a twisted cable in the control panel.",
+"conspiracy":"The investigator found no evidence of a conspiracy among the suppliers.",
+"textile":"The company imports textile materials for its clothing line.",
+"revenge":"The employee said the complaint was not motivated by revenge.",
+"accessory":"The store sells a protective accessory for the tablet.",
+"architectural":"The hotel preserved the building's original architectural details.",
+"payable":"The invoice is payable within thirty days.",
+"lottery":"The charity held a lottery to raise funds for its programs.",
+"lawsuit":"The company settled the lawsuit before it reached court.",
+"scanner":"The receptionist used a scanner to copy the visitor's identification.",
+"proceeding":"The meeting is proceeding according to the published agenda.",
+"extraction":"The laboratory completed the extraction of the sample's active ingredient.",
+"defendant":"The defendant's attorney submitted the requested documents.",
+"studied":"The team studied customer behavior before redesigning the website.",
+"intersection":"The delivery truck stopped at the intersection near the warehouse.",
+"consistency":"The restaurant checks the consistency of its recipes across branches.",
+"worship":"The building includes a quiet room for worship and reflection.",
+"medieval":"The museum's medieval exhibit attracts many visitors.",
+"telling":"The survey results are telling: most customers want faster delivery.",
+"enabling":"The upgrade is enabling employees to work securely from home.",
+"pioneer":"The company was a pioneer in online appointment booking.",
+"referenced":"The report referenced the latest figures from the finance department.",
+"publicity":"The product launch received positive publicity in local newspapers.",
+"marathon":"The company sponsored a charity marathon for local hospitals.",
+"summit":"The executives met at a regional business summit.",
+"healing":"The clinic offers a quiet space for healing and recovery.",
+"liberty":"Employees have the liberty to suggest improvements to the process.",
+"voltage":"The electrician checked the voltage before connecting the equipment.",
+"antique":"The hotel displayed an antique clock in the reception area.",
+"lively":"The trade fair had a lively atmosphere throughout the afternoon.",
+"kidnap":"The security team trained staff on how to respond if a visitor is kidnapped.",
+"insult":"The customer considered the comment an insult and filed a complaint.",
+"sampling":"The laboratory is sampling water from several locations.",
+"petition":"Residents submitted a petition against the proposed road closure.",
+"daring":"The engineer proposed a daring solution to the space problem.",
+"betray":"The employee refused to betray the client's confidential information.",
+"emerging":"The company is investing in emerging markets in Southeast Asia.",
+"precision":"The machine cuts the material with exceptional precision.",
+"deadly":"The warning explains how to handle the deadly chemical safely.",
+"adoption":"The adoption of digital invoices reduced paper use.",
+"lesser":"The buyer chose the lesser of two shipping fees.",
+"scenic":"The hotel offers a scenic view of the harbor.",
+"worthy":"The committee considered the proposal worthy of further study.",
+"socket":"The technician plugged the device into a nearby socket.",
+"driven":"The project is driven by strong demand from small businesses.",
+"deluxe":"The hotel upgraded the guest to a deluxe room.",
+"subscription":"The customer canceled the software subscription online.",
+"numeric":"The form requires a numeric password of six digits.",
+"reasoning":"The report explains the reasoning behind the pricing decision.",
+"template":"The assistant used a template to prepare the monthly report.",
+"heritage":"The company restored the building as part of its cultural heritage program.",
+"revision":"The editor requested one final revision of the brochure.",
+"eligible":"Employees are eligible for the bonus after six months of service.",
+"enhanced":"The enhanced search function makes archived files easier to find.",
+"administrative":"The department handles administrative tasks for all branches.",
+"commerce":"The port has supported international commerce for centuries.",
+"privacy":"The app's privacy settings allow users to control data sharing.",
+"reserved":"The front table is reserved for the visiting delegation.",
+"transcript":"The assistant prepared a transcript of the board meeting.",
+"integrating":"The IT team is integrating the payment system with the website.",
+"retreat":"The management team held a retreat to plan next year's strategy.",
+"footage":"The security officer reviewed camera footage from the loading dock.",
+"dietary":"Please tell the caterer about any dietary requirements.",
+"authorized":"Only authorized staff may enter the laboratory.",
+"eternal":"The memorial was designed as an eternal symbol of peace.",
+"conviction":"The court overturned the conviction after reviewing new evidence.",
+"settled":"The two companies settled the payment dispute amicably.",
+"prototype":"The engineers tested a prototype of the new delivery robot.",
+"nutrition":"The school provides information about nutrition to employees.",
+"terrain":"The vehicle was designed for rough terrain near the mine.",
+"custody":"The bank keeps the original documents in its custody.",
+"nomination":"The board announced the nomination of a new chairperson.",
+"durable":"The manufacturer uses durable materials for outdoor equipment.",
+"terrace":"Guests can enjoy lunch on the hotel's sunny terrace.",
+"organizational":"The consultant recommended an organizational change to reduce delays.",
+"lending":"The bank expanded its lending program for small businesses.",
+"unified":"The company introduced a unified system for handling customer requests.",
+"harbour":"The cargo ship returned to the harbour before the storm.",
+"reproductive":"The clinic provides reproductive health information to employees.",
+"harmony":"The new policy aims to promote harmony between the two departments.",
+"telecommunication":"The company provides telecommunication services to rural areas.",
+"newsletter":"The marketing team sends a monthly newsletter to subscribers.",
+"exclusion":"The contract contains an exclusion for damage caused by natural disasters.",
+"replica":"The museum displayed a replica of the historic aircraft.",
+"startup":"The startup developed an app for booking shared workspaces.",
+"casting":"The theater began casting actors for its annual company event.",
+"supervision":"The trainee worked under the supervision of an experienced technician.",
+"termination":"The contract requires written notice before termination.",
+"hospitality":"The hotel is known for its warm hospitality.",
+"tribute":"The company named a scholarship as a tribute to its founder.",
+"drainage":"The construction team improved drainage around the warehouse.",
+"forestry":"The company buys certified paper from sustainable forestry projects.",
+}
+
+JA={
+"nominate":"委員会は新プロジェクトの議長を指名する。","avenue":"会社は配送費削減のあらゆる方法を検討している。","consistently":"その支店は一貫して高い顧客評価を受けている。","sympathy":"マネージャーは事故後、従業員に同情の意を表した。","appreciation":"取締役はチームの仕事に感謝して表彰状を贈った。","enclosed":"署名済み契約書をこの手紙に同封します。","anatomy":"研修では倉庫作業員に肩の解剖学を説明する。","reconstruction":"旧駅舎の再建は4月に始まる。","clarity":"編集者は安全指示の明確さを高めた。","suburban":"会社は成長する郊外地域に対応する支店を開いた。","intimate":"レストランは少人数の接待に親密な雰囲気を提供する。","beneficial":"新しい日程は職員と顧客の双方に有益だった。","threatened":"海岸沿いの道路は深刻な洪水の危険にさらされた。","striking":"報告書には2地域間の顕著な違いが示されている。","retained":"会社は福利厚生を改善して優秀な従業員をつなぎ留めた。","terrorism":"空港はテロを防ぐため警備手順を見直している。","timeline":"プロジェクトマネージャーは建設日程を更新した。","outlined":"取締役は次の四半期の目標の概要を示した。","moisture":"包装は機器を湿気から守る。","defining":"顧客の信頼は会社ブランドを特徴づける要素だ。","infected":"ITチームは感染したコンピューターをネットワークから外した。","courtesy":"ホテルは宿泊客に無料送迎を提供している。","isolation":"技術者は試験のため破損した装置を隔離した。","inspired":"新製品は顧客の提案から着想を得た。","disposal":"会社は古い化学物質の安全な廃棄を手配した。","screening":"採用前に応募者全員が選考面接を受ける。","paradise":"リゾートはその島を熱帯の楽園として宣伝している。","freelance":"雑誌はイベント用にフリーランスの写真家を雇った。","excessive":"監査人は出張費が過大だと指摘した。","supposed":"荷物は正午までに届くはずだった。","cellular":"監視装置は携帯通信網を使っている。","tracking":"顧客はオンラインで出荷品の追跡情報を確認できる。","handling":"従業員は化学物質の安全な取り扱いについて研修を受ける。","merchant":"オンライン販売業者は不足品の返金を申し出た。","attorney":"弁護士は会社が署名する前に賃貸契約を確認した。","inherit":"新しい取締役は地域事務所の責任を引き継ぐ。","discard":"保証期間が切れるまで領収書を捨てないでください。","corrupt":"警備チームは共有サーバー上に破損ファイルを見つけた。","cherish":"創業者は今も会社の創業時の価値観を大切にしている。","novelty":"新しいアプリの目新しさが多くの初期利用者を引きつけた。","meditation":"ウェルネス制度は昼休みに瞑想の時間を設けている。","phantom":"技術者は正体不明の音の原因を緩んだパネルに突き止めた。","invisible":"保護コーティングは乾くと見えなくなる。","prophet":"アナリストは預言者ではないが、需要予測は正確だった。","backing":"新興企業は地元投資家から財政支援を受けた。","financing":"銀行は倉庫拡張の融資を承認した。","expired":"クーポンの期限が切れていたため顧客は使えなかった。","biography":"博物館は会社創業者の伝記を出版した。","madness":"マネージャーは直前の日程変更を完全な無謀さだと評した。","texture":"デザイナーは制服に柔らかな手触りの布を選んだ。","dedicated":"会社は法人顧客専用の電話窓口を開設した。","modelling":"アナリストは投資計画を比較するため財務モデルを使った。","miracle":"修理は奇跡ではなく、技術者が主要部品を交換したのだ。","perceived":"顧客は新サービスをより速く信頼できると感じた。","inquire":"会議室の空き状況は受付でお問い合わせください。","geological":"調査で建設現場近くの地質学的リスクが特定された。","lasting":"研修はサービス品質の持続的な改善を目指す。","assured":"マネージャーは問題を解決すると顧客に保証した。","twisted":"技術者は制御盤のねじれたケーブルを交換した。","conspiracy":"調査員は仕入先間の共謀の証拠を見つけられなかった。","textile":"会社は衣料品ライン用に繊維素材を輸入している。","revenge":"従業員は苦情が報復目的ではないと話した。","accessory":"店はタブレット用の保護アクセサリーを販売している。","architectural":"ホテルは建物本来の建築的な細部を保存した。","payable":"請求書は30日以内に支払うものとする。","lottery":"慈善団体は活動資金を集めるためくじを開催した。","lawsuit":"会社は裁判になる前に訴訟を和解した。","scanner":"受付係はスキャナーで来訪者の身分証をコピーした。","proceeding":"会議は公表された議題に従って進行している。","extraction":"研究所は試料から有効成分を抽出した。","defendant":"被告側の弁護士は求められた書類を提出した。","studied":"チームはウェブサイトを刷新する前に顧客行動を調査した。","intersection":"配送トラックは倉庫近くの交差点で止まった。","consistency":"レストランは支店間でレシピの一貫性を確認している。","worship":"建物には礼拝や内省のための静かな部屋がある。","medieval":"博物館の中世展示は多くの来訪者を集める。","telling":"調査結果は示唆的だ。大半の顧客がより速い配送を望んでいる。","enabling":"更新により従業員は自宅から安全に働ける。","pioneer":"その会社はオンライン予約の先駆者だった。","referenced":"報告書は財務部の最新数値を引用した。","publicity":"製品発売は地元紙で好意的に報じられた。","marathon":"会社は地域病院のためのチャリティーマラソンを後援した。","summit":"幹部は地域ビジネスサミットで会談した。","healing":"診療所は治療と回復のための静かな空間を提供する。","liberty":"従業員は工程改善を自由に提案できる。","voltage":"電気技師は機器を接続する前に電圧を確認した。","antique":"ホテルは受付エリアにアンティークの時計を飾った。","lively":"見本市は午後を通して活気に満ちていた。","kidnap":"警備チームは来訪者が誘拐された場合の対応を職員に訓練した。","insult":"顧客はその発言を侮辱と感じ、苦情を申し立てた。","sampling":"研究所は複数地点から水を採取している。","petition":"住民は道路閉鎖案に反対する請願書を提出した。","daring":"技術者は空間問題に大胆な解決策を提案した。","betray":"従業員は顧客の機密情報を裏切って漏らすことを拒んだ。","emerging":"会社は東南アジアの新興市場に投資している。","precision":"その機械は非常に高い精度で素材を切断する。","deadly":"警告書は致死性の化学物質を安全に扱う方法を説明している。","adoption":"電子請求書の導入で紙の使用量が減った。","lesser":"買い手は2つの送料のうち安い方を選んだ。","scenic":"ホテルから港の美しい景色を楽しめる。","worthy":"委員会は提案をさらに検討する価値があると判断した。","socket":"技術者は装置を近くのコンセントに差し込んだ。","driven":"このプロジェクトは中小企業からの強い需要に動かされている。","deluxe":"ホテルは宿泊客をデラックスルームに変更した。","subscription":"顧客はオンラインでソフトウェアの購読を解約した。","numeric":"フォームには6桁の数字パスワードが必要だ。","reasoning":"報告書は価格決定の根拠を説明している。","template":"アシスタントはひな形を使って月次報告書を作成した。","heritage":"会社は文化遺産事業の一環で建物を修復した。","revision":"編集者はパンフレットの最終修正を1回求めた。","eligible":"従業員は6か月勤務すると賞与の対象になる。","enhanced":"強化された検索機能で保存ファイルを見つけやすくなった。","administrative":"その部署は全支店の事務作業を担当する。","commerce":"その港は何世紀にもわたり国際商業を支えてきた。","privacy":"アプリのプライバシー設定でデータ共有を管理できる。","reserved":"前方のテーブルは来訪団のために予約されている。","transcript":"アシスタントは取締役会議の議事録を作成した。","integrating":"ITチームは決済システムをウェブサイトに統合している。","retreat":"経営チームは来年度の戦略を計画するため合宿を行った。","footage":"警備員は荷積み場の監視カメラ映像を確認した。","dietary":"食事制限があればケータリング担当者に伝えてください。","authorized":"許可を受けた職員だけが研究所に入れる。","eternal":"記念碑は平和の永遠の象徴として設計された。","conviction":"裁判所は新証拠を検討し、有罪判決を覆した。","settled":"2社は支払紛争を友好的に解決した。","prototype":"技術者は新しい配送ロボットの試作品を試験した。","nutrition":"学校は従業員に栄養に関する情報を提供している。","terrain":"その車両は鉱山周辺の荒れた地形向けに設計された。","custody":"銀行は原本書類を保管している。","nomination":"取締役会は新しい議長の指名を発表した。","durable":"メーカーは屋外機器に耐久性のある素材を使っている。","terrace":"宿泊客はホテルの明るいテラスで昼食を楽しめる。","organizational":"コンサルタントは遅延削減のため組織変更を勧めた。","lending":"銀行は中小企業向け融資制度を拡大した。","unified":"会社は顧客依頼を処理する統一システムを導入した。","harbour":"貨物船は嵐の前に港へ戻った。","reproductive":"診療所は従業員に生殖に関する健康情報を提供する。","harmony":"新方針は2部署間の調和を促すことを目指す。","telecommunication":"会社は地方に通信サービスを提供している。","newsletter":"マーケティング部は購読者に月刊ニュースレターを送る。","exclusion":"契約には自然災害による損害の除外規定がある。","replica":"博物館は歴史的な航空機の複製を展示した。","startup":"新興企業は共同作業スペース予約アプリを開発した。","casting":"劇場は社内イベント向けの俳優選考を始めた。","supervision":"研修生は経験豊富な技術者の監督下で働いた。","termination":"契約終了前には書面通知が必要だ。","hospitality":"そのホテルは温かいもてなしで知られている。","tribute":"会社は創業者をたたえて奨学金を設けた。","drainage":"建設チームは倉庫周辺の排水設備を改善した。","forestry":"会社は持続可能な林業事業から認証紙を購入している。",
+}
+
+def main() -> None:
+    vocabulary=json.loads(VOCAB_PATH.read_text(encoding="utf-8"))
+    phrase_root=json.loads(PHRASE_PATH.read_text(encoding="utf-8"))
+    translations=phrase_root.setdefault("translations",{})
+    rows=[x for x in vocabulary if int(x.get("level",0))==3][1050:1200]
+    expected={str(x["word"]).casefold() for x in rows}
+    assert set(EN)==expected and set(JA)==expected
+    changed=0
+    for item in rows:
+        word=str(item["word"]).casefold(); source=EN[word]
+        item["example"]=source
+        ex=translations.setdefault(f"builtin:{item['id']}",{}).setdefault("example",{})
+        for field,value in (("source",source),("en",source),("ja",JA[word])):
+            if ex.get(field)!=value: ex[field]=value; changed+=1
+    VOCAB_PATH.write_text(json.dumps(vocabulary,ensure_ascii=False,indent=1)+"\n",encoding="utf-8")
+    PHRASE_PATH.write_text(json.dumps(phrase_root,ensure_ascii=False,indent=1)+"\n",encoding="utf-8")
+    print(f"reviewed 700+ English/Japanese examples batch 3b: {len(rows)} terms, {changed} fields")
+
+if __name__=="__main__": main()

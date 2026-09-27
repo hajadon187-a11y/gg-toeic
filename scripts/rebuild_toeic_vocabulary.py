@@ -13,10 +13,232 @@ import json
 import re
 from pathlib import Path
 
+from rewrite_toeic_content import main as rewrite_toeic_content
+from review_added_business_meanings import main as review_added_business_meanings
+from review_added_business_examples import main as review_added_business_examples
+from review_level1_batch1_examples import main as review_level1_batch1_examples
+from review_level1_batch2_examples import main as review_level1_batch2_examples
+from review_level1_batch3_examples import main as review_level1_batch3_examples
+from review_level1_batch4_examples import main as review_level1_batch4_examples
+from review_level1_batch5_examples import main as review_level1_batch5_examples
+from review_level1_batch6_examples import main as review_level1_batch6_examples
+from review_level1_batch7_examples import main as review_level1_batch7_examples
+from review_level1_batch8_examples import main as review_level1_batch8_examples
+from review_level1_batch9_examples import main as review_level1_batch9_examples
+from review_level1_batch10_examples import main as review_level1_batch10_examples
+from review_level1_batch11_examples import main as review_level1_batch11_examples
+from review_level1_batch12_examples import main as review_level1_batch12_examples
+from review_level1_batch13_examples import main as review_level1_batch13_examples
+from review_level1_batch14_examples import main as review_level1_batch14_examples
+from review_level2_batch1_examples import main as review_level2_batch1_examples
+from review_level2_batch2_examples import main as review_level2_batch2_examples
+from review_level2_batch3_examples import main as review_level2_batch3_examples
+from review_level2_batch4_examples import main as review_level2_batch4_examples
+from review_level2_batch5_examples import main as review_level2_batch5_examples
+from review_level2_batch6_examples import main as review_level2_batch6_examples
+from review_level3_batch1_examples import main as review_level3_batch1_examples
+from review_level3_batch2_examples import main as review_level3_batch2_examples
+from review_level3_batch2b_examples import main as review_level3_batch2b_examples
+from review_level3_batch2c_examples import main as review_level3_batch2c_examples
+from review_level3_batch2d_examples import main as review_level3_batch2d_examples
+from review_level3_batch3a_examples import main as review_level3_batch3a_examples
+from review_level3_batch3b_examples import main as review_level3_batch3b_examples
+from review_level3_batch3c_examples import main as review_level3_batch3c_examples
+from review_level3_batch3d_examples import main as review_level3_batch3d_examples
+from review_level3_batch3e_examples import main as review_level3_batch3e_examples
+from review_level3_batch3f_examples import main as review_level3_batch3f_examples
+from review_level4_batch1a_examples import main as review_level4_batch1a_examples
+from review_examples_multilingual_level4_1_20 import main as review_examples_multilingual_level4_1_20
+from review_level4_batch1b_10 import main as review_level4_batch1b_10
+from review_level4_batch1c_20 import main as review_level4_batch1c_20
+from review_level4_batch1d_10 import main as review_level4_batch1d_10
+from review_level4_batch1e_10 import main as review_level4_batch1e_10
+from review_examples_multilingual_901_950 import main as review_examples_multilingual_901_950
+from review_examples_multilingual_951_1000 import main as review_examples_multilingual_951_1000
+
 
 ROOT = Path(__file__).resolve().parents[1]
 VOCAB_PATH = ROOT / "app/src/main/assets/vocabulary.json"
 PHRASE_PATH = ROOT / "app/src/main/assets/vocabulary_phrase_translations.json"
+
+
+# The app exposes four score bands. Keep these counts explicit so the deck
+# remains balanced when the source vocabulary is rebuilt.
+TOEIC_LEVEL_COUNTS = {
+    1: 1322,  # 500+
+    2: 1457,  # 600+
+    3: 1691,  # 700+
+    4: 1933,  # 800+ (premium; remainder)
+}
+
+# Existing internal levels are a useful first-order difficulty signal. Within
+# one level, source lists provide a stable secondary signal: high-frequency
+# and business vocabulary should be placed before academic/advanced lists.
+SOURCE_DIFFICULTY = {
+    "NGSL": 10,
+    "TOEIC-business-v1": 12,
+    "legacy-base": 20,
+    "restored-lower-level": 25,
+    "band60-replaced": 40,
+    "NAWL": 50,
+    "AWL": 55,
+    "band65-replaced": 65,
+    "google-10000-advanced": 75,
+}
+
+BUSINESS_TOPIC_NAMES = {
+    "Business",
+    "Compliance",
+    "Communication",
+    "Customer Service",
+    "Economy",
+    "Finance",
+    "Human Resources",
+    "Legal",
+    "Logistics",
+    "Marketing",
+    "Meetings",
+    "Sales",
+    "Technology",
+    "Travel",
+    "Workplace",
+}
+
+# Existing source lists do not consistently label workplace vocabulary with a
+# workplace topic. Keep this explicit set so advanced TOEIC business words do
+# not lose priority merely because their source topic is General or Society.
+ADVANCED_BUSINESS_WORDS = {
+    "acquisition", "agreement", "allocate", "arbitration", "asset", "audit",
+    "authorize", "benchmark", "breach", "budget", "capital", "cash flow",
+    "clause", "commission", "compliance", "confidentiality", "contract",
+    "corporate", "customs", "deadline", "dividend", "disclosure", "distributor",
+    "endorsement", "equity", "estimate", "expense", "expenditure", "facility",
+    "fiscal", "forecast", "forecasting", "freight", "headquarters", "incentive",
+    "invoice", "inventory", "investment", "liability", "litigation", "loan",
+    "margin", "merger", "negotiate", "obligation", "operational", "outsourcing",
+    "patent", "payroll", "penalty", "portfolio", "procurement", "profitable",
+    "proposal", "prospect", "quarterly", "reimbursement", "regulation", "regulatory",
+    "retailer", "retention", "revenue", "salary", "shareholder", "shipment",
+    "stakeholder", "strategic", "subsidiary", "supplier", "tariff", "trademark",
+    "transaction", "turnover", "vendor", "warranty", "wholesale", "workload",
+}
+
+# A few very common function words can sit in a broader source band, but they
+# are still clearly 500+ vocabulary and should not be pushed upward merely to
+# satisfy the uneven deck sizes.
+FOUNDATION_WORDS = {
+    "a", "an", "and", "are", "as", "at", "be", "because", "been", "before",
+    "being", "between", "both", "but", "by", "can", "could", "do", "does", "down",
+    "each", "even", "every", "few", "for", "from", "he", "her", "here", "him",
+    "his", "how", "i", "if", "in", "into", "is", "it", "its", "just", "me",
+    "more", "most", "much", "my", "no", "not", "now", "of", "off", "on", "one",
+    "only", "or", "our", "out", "over", "she", "should", "so", "some", "than",
+    "that", "the", "their", "them", "then", "there", "these", "they", "this",
+    "those", "through", "to", "under", "up", "us", "was", "we", "what", "when",
+    "where", "which", "while", "who", "why", "will", "with", "would", "you", "your",
+}
+
+
+def assign_toeic_score_levels(vocabulary: list[dict[str, object]]) -> None:
+    """Assign exactly four score-band levels while preserving difficulty order.
+
+    The first pass keeps the existing four-band balance. The second pass is a
+    TOEIC-specific upper-band correction: the 800+ deck is filled first with
+    advanced non-academic entries and business vocabulary, then with the
+    strongest formal vocabulary from 700+. This prevents campus/science-only
+    entries from occupying the premium band simply because they are difficult.
+    """
+    business_seed_levels = {
+        str(seed["word"]).casefold(): int(seed["level"])
+        for seed in parse_seed_rows()
+    }
+
+    ranked = sorted(
+        vocabulary,
+        key=lambda item: (
+            0 if str(item.get("word", "")).casefold() in FOUNDATION_WORDS else int(item.get("level", 2)),
+            SOURCE_DIFFICULTY.get(str(item.get("source_list", "")), 45),
+            1 if str(item.get("topic", "")) == "Academic" else 0,
+            str(item.get("word", "")).casefold(),
+        ),
+    )
+    expected_total = sum(TOEIC_LEVEL_COUNTS.values())
+    if len(ranked) != expected_total:
+        raise ValueError(
+            f"TOEIC score-band counts expect {expected_total} words, got {len(ranked)}"
+        )
+
+    # Once the asset has an explicit four-band distribution, retain its
+    # current lower-band placement and apply only the targeted upper-band
+    # correction below. Re-running the rebuild must not undo the correction by
+    # first sorting the data back through the old source-only ranking.
+    already_score_banded = (
+        len(vocabulary) == sum(TOEIC_LEVEL_COUNTS.values()) and
+        {
+            level: sum(1 for item in vocabulary if int(item.get("level", 0)) == level)
+            for level in TOEIC_LEVEL_COUNTS
+        } == TOEIC_LEVEL_COUNTS
+    )
+    if not already_score_banded:
+        offset = 0
+        for score_level, count in TOEIC_LEVEL_COUNTS.items():
+            for item in ranked[offset:offset + count]:
+                item["level"] = score_level
+            offset += count
+
+    # Rebalance only the upper two bands. The lower bands remain the stable
+    # foundation/general vocabulary path, while 700+ and 800+ are ordered by
+    # TOEIC usefulness and formal difficulty.
+    upper = [item for item in vocabulary if int(item.get("level", 2)) >= 3]
+
+    def is_academic(item: dict[str, object]) -> bool:
+        return str(item.get("topic", "")).casefold() == "academic"
+
+    def is_business(item: dict[str, object]) -> bool:
+        word = str(item.get("word", "")).casefold()
+        topic = str(item.get("topic", ""))
+        seed_level = business_seed_levels.get(word)
+        return (
+            (seed_level is not None and seed_level >= 2)
+            or topic in BUSINESS_TOPIC_NAMES
+            or word in ADVANCED_BUSINESS_WORDS
+        )
+
+    def upper_priority(item: dict[str, object]) -> tuple[int, int, int, int, str]:
+        current_level = min(int(item.get("level", 2)), 4)
+        source = str(item.get("source_list", ""))
+        source_score = SOURCE_DIFFICULTY.get(source, 45)
+        academic = is_academic(item)
+        business = is_business(item)
+
+        # Keep advanced non-academic material in 800+ first. Next prefer
+        # formal 700+ vocabulary and business terms. Academic-only material is
+        # deliberately last so it is reduced in the premium band.
+        if current_level == 4 and not academic and business:
+            bucket = 0
+        elif current_level == 3 and not academic and business and source_score >= 25:
+            bucket = 1
+        elif current_level == 4 and not academic:
+            bucket = 2
+        elif current_level == 3 and not academic and source_score >= 40:
+            bucket = 3
+        elif current_level == 4 and academic:
+            bucket = 4
+        else:
+            bucket = 5
+
+        return (
+            bucket,
+            0 if business else 1,
+            -source_score,
+            -current_level,
+            str(item.get("word", "")).casefold(),
+        )
+
+    upper_sorted = sorted(upper, key=upper_priority)
+    premium_ids = {id(item) for item in upper_sorted[:TOEIC_LEVEL_COUNTS[4]]}
+    for item in upper:
+        item["level"] = 4 if id(item) in premium_ids else 3
 
 
 # These words are useful in academic English but are not useful as a core TOEIC
@@ -521,6 +743,13 @@ def main() -> None:
     old_translations = phrase_root.get("translations", {})
 
     original_words = {str(item.get("word", "")).casefold() for item in vocabulary}
+    already_score_banded = (
+        len(vocabulary) == sum(TOEIC_LEVEL_COUNTS.values()) and
+        {
+            level: sum(1 for item in vocabulary if int(item.get("level", 0)) == level)
+            for level in TOEIC_LEVEL_COUNTS
+        } == TOEIC_LEVEL_COUNTS
+    )
     kept: list[dict[str, object]] = []
     changed_fields: dict[str, set[str]] = {}
 
@@ -531,7 +760,10 @@ def main() -> None:
 
         item = dict(item)
         stable_key = f"builtin:{item['id']}"
-        if word.casefold() in ACADEMIC_ONLY_WORDS or item.get("topic") in {"Science", "Education"}:
+        if (
+            not already_score_banded and
+            (word.casefold() in ACADEMIC_ONLY_WORDS or item.get("topic") in {"Science", "Education"})
+        ):
             if int(item.get("level", 2)) >= 3:
                 item["level"] = 5
             item["topic"] = "Academic"
@@ -561,6 +793,7 @@ def main() -> None:
         next_id += 1
 
     kept.sort(key=lambda item: int(item["id"]))
+    assign_toeic_score_levels(kept)
 
     new_translations: dict[str, object] = {}
     for item in kept:
@@ -598,16 +831,67 @@ def main() -> None:
         encoding="utf-8",
     )
 
+    # The vocabulary rebuild can change or add source strings. Run the native
+    # quality pass after the structural rebuild so future data regenerations do
+    # not reintroduce mechanical collocations or stale example translations.
+    rewrite_toeic_content()
+    review_added_business_meanings()
+    review_added_business_examples()
+    review_level1_batch1_examples()
+    review_level1_batch2_examples()
+    review_level1_batch3_examples()
+    review_level1_batch4_examples()
+    review_level1_batch5_examples()
+    review_level1_batch6_examples()
+    review_level1_batch7_examples()
+    review_level1_batch8_examples()
+    review_level1_batch9_examples()
+    review_level1_batch10_examples()
+    review_level1_batch11_examples()
+    review_level1_batch12_examples()
+    review_level1_batch13_examples()
+    review_level1_batch14_examples()
+    review_level2_batch1_examples()
+    review_level2_batch2_examples()
+    review_level2_batch3_examples()
+    review_level2_batch4_examples()
+    review_level2_batch5_examples()
+    review_level2_batch6_examples()
+    review_level3_batch1_examples()
+    review_level3_batch2_examples()
+    review_level3_batch2b_examples()
+    review_level3_batch2c_examples()
+    review_level3_batch2d_examples()
+    review_level3_batch3a_examples()
+    review_level3_batch3b_examples()
+    review_level3_batch3c_examples()
+    review_level3_batch3d_examples()
+    review_level3_batch3e_examples()
+    review_level3_batch3f_examples()
+    review_level4_batch1a_examples()
+    review_examples_multilingual_level4_1_20()
+    review_level4_batch1b_10()
+    review_level4_batch1c_20()
+    review_level4_batch1d_10()
+    review_level4_batch1e_10()
+    review_examples_multilingual_901_950()
+    review_examples_multilingual_951_1000()
+
     words = [str(item["word"]).casefold() for item in kept]
     ids = [int(item["id"]) for item in kept]
     assert len(words) == len(set(words)), "duplicate vocabulary words"
     assert len(ids) == len(set(ids)), "duplicate vocabulary ids"
+    assert {
+        level: sum(1 for item in kept if int(item["level"]) == level)
+        for level in TOEIC_LEVEL_COUNTS
+    } == TOEIC_LEVEL_COUNTS, "unexpected TOEIC score-band counts"
     assert set(new_translations).issubset({f"builtin:{item['id']}" for item in kept})
     print(f"vocabulary: {len(vocabulary)} -> {len(kept)}")
     print(f"removed campus-only: {len(vocabulary) - len([x for x in vocabulary if str(x.get('word', '')).casefold() not in CAMPUS_ONLY_WORDS])}")
     print(f"added business seed: {len(kept) - len([x for x in vocabulary if str(x.get('word', '')).casefold() not in CAMPUS_ONLY_WORDS])}")
     print(f"rewritten phrase keys: {len(changed_fields)}")
     print(f"translation keys: {len(new_translations)}")
+    print("TOEIC score bands:", {level: sum(1 for item in kept if int(item["level"]) == level) for level in TOEIC_LEVEL_COUNTS})
 
 
 if __name__ == "__main__":

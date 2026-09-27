@@ -174,6 +174,7 @@ class RoomRepositoryTest {
             synonyms = "",
             collocations = "",
             example = "",
+            level = 3,
             topic = "General"
         )
 

@@ -52,6 +52,7 @@ open class VocabularySeeder @Inject constructor(
                     synonyms = entity.synonyms,
                     collocations = entity.collocations,
                     example = entity.example,
+                    level = entity.level,
                     topic = entity.topic
                 )
             }

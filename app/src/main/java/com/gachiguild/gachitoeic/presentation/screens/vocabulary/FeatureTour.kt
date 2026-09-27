@@ -164,12 +164,18 @@ fun flashcardButtonHelpCopy(strings: AppStrings): FlashcardButtonHelpCopy =
         previousLabel = strings.vocabPrev
     )
 
-private val featureTourTargetLevels = listOf("BASIC", "STANDARD", "ADVANCED")
+private val featureTourTargetLevels = listOf(
+    "TOEIC_500",
+    "TOEIC_600",
+    "TOEIC_700",
+    "TOEIC_800"
+)
 
 private fun featureTourScoreLabel(level: String): String = when (level) {
-    "BASIC" -> "Basic"
-    "STANDARD" -> "Standard"
-    else -> "Advanced"
+    "TOEIC_500" -> "500+"
+    "TOEIC_600" -> "600+"
+    "TOEIC_700" -> "700+"
+    else -> "800+"
 }
 
 private fun featureTourLevelWordCountLabel(strings: AppStrings, count: Int): String {
@@ -325,7 +331,7 @@ private fun FeatureTourTargetLevelSelector(
                 horizontalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 rowBands.forEach { band ->
-                    val isPremiumLocked = band == "ADVANCED" && !premiumUnlocked
+                    val isPremiumLocked = band == "TOEIC_800" && !premiumUnlocked
                     val wordCount = levelWordCounts[band]
                     FilterChip(
                         selected = selectedBand == band && !isPremiumLocked,
@@ -396,7 +402,7 @@ fun mainFeatureTourSteps(strings: AppStrings): List<FeatureTourStep> = (when (st
         FeatureTourStep("settings_button", "設定", "表示言語、バックアップ、レストアを管理します。"),
         FeatureTourStep("progress_section", "学習進捗", "未マスター、総単語数、お気に入り、マスター済みの単語数を確認できます。"),
         FeatureTourStep("progress_search", "学習進捗の検索", "虫眼鏡をタップすると、単語名や意味から単語を検索できます。見つけた単語は単語カードで確認できます。"),
-        FeatureTourStep("level_filter", "レベル（TOEIC）", "単語をTOEICの学習レベル別に絞り込めます。下のスコアを目安に選択でき、Advancedはプレミアム機能です。"),
+        FeatureTourStep("level_filter", "レベル（TOEIC）", "単語をTOEICのスコア帯別に絞り込めます。800+はプレミアム機能です。"),
         FeatureTourStep("streak_area", "ストリーク", "ここをタップすると、連続学習日数の詳細や、ストリークを続けるためのヒントを確認できます。途切れたストリークの救済もできます。"),
         FeatureTourStep("daily_goal", "今日の学習と1日の目標", "今日の学習状況を確認できます。下の選択肢から1日の学習量を設定できます。"),
         FeatureTourStep("flashcard_tab", "単語カード", "カードをタップすると意味・例文・コロケーションが表示されます。"),
@@ -414,7 +420,7 @@ fun mainFeatureTourSteps(strings: AppStrings): List<FeatureTourStep> = (when (st
         FeatureTourStep("settings_button", "设置", "管理显示语言、备份和恢复。"),
         FeatureTourStep("progress_section", "学习进度", "查看未掌握、单词总数、收藏和已掌握的单词数量。"),
         FeatureTourStep("progress_search", "搜索学习进度", "点击放大镜，可以按单词或释义搜索词汇。找到的单词可以在单词卡中查看。"),
-        FeatureTourStep("level_filter", "级别（TOEIC）", "可以按 TOEIC 学习级别筛选单词，可根据下方分数进行选择。Advanced 是高级版功能。"),
+        FeatureTourStep("level_filter", "级别（TOEIC）", "可以按 TOEIC 分数段筛选单词。800+ 是高级版功能。"),
         FeatureTourStep("streak_area", "连续学习", "点击这里可查看连续学习详情和保持连续学习的提示。连续学习中断后也可以进行挽救。"),
         FeatureTourStep("daily_goal", "今日学习和每日目标", "查看今日学习情况，并从下方选项设置每日学习量。"),
         FeatureTourStep("flashcard_tab", "单词卡", "点击卡片可显示释义、例句和搭配。"),
@@ -432,7 +438,7 @@ fun mainFeatureTourSteps(strings: AppStrings): List<FeatureTourStep> = (when (st
         FeatureTourStep("settings_button", "सेटिंग्स", "ऐप की भाषा, बैकअप और पुनर्स्थापना प्रबंधित करें।"),
         FeatureTourStep("progress_section", "पढ़ाई की प्रगति", "अभी तक पूरी तरह न सीखे गए, कुल, पसंदीदा और पूरी तरह सीखे गए शब्दों की संख्या देखें।"),
         FeatureTourStep("progress_search", "पढ़ाई की प्रगति खोजें", "आवर्धक लेंस पर टैप करके शब्द या अर्थ से शब्द खोजें। मिले हुए शब्द को शब्द कार्ड में देखें।"),
-        FeatureTourStep("level_filter", "स्तर (TOEIC)", "शब्दों को TOEIC सीखने के स्तर के अनुसार फ़िल्टर करें। नीचे दिए गए स्कोर के आधार पर चुनें। Advanced प्रीमियम सुविधा है।"),
+        FeatureTourStep("level_filter", "स्तर (TOEIC)", "शब्दों को TOEIC स्कोर बैंड के अनुसार फ़िल्टर करें। 800+ प्रीमियम सुविधा है।"),
         FeatureTourStep("streak_area", "स्ट्रीक", "यहाँ टैप करके लगातार पढ़ाई की जानकारी और स्ट्रीक बनाए रखने के सुझाव देखें। स्ट्रीक टूटने पर उसे बचाने का विकल्प भी उपलब्ध है।"),
         FeatureTourStep("daily_goal", "आज की पढ़ाई और दैनिक लक्ष्य", "आज की पढ़ाई देखें और नीचे दिए गए विकल्पों से दैनिक पढ़ाई की मात्रा चुनें।"),
         FeatureTourStep("flashcard_tab", "शब्द कार्ड", "अर्थ, उदाहरण और संयोजन देखने के लिए कार्ड टैप करें।"),
@@ -450,7 +456,7 @@ fun mainFeatureTourSteps(strings: AppStrings): List<FeatureTourStep> = (when (st
         FeatureTourStep("settings_button", "Cài đặt", "Quản lý ngôn ngữ hiển thị, sao lưu và khôi phục."),
         FeatureTourStep("progress_section", "Tiến độ học", "Xem số từ chưa thành thạo, tổng số từ, số từ yêu thích và số từ đã thành thạo."),
         FeatureTourStep("progress_search", "Tìm kiếm trong tiến độ học", "Chạm vào kính lúp để tìm từ theo từ vựng hoặc nghĩa. Từ tìm được có thể xem trong thẻ từ."),
-        FeatureTourStep("level_filter", "Cấp độ (TOEIC)", "Lọc từ vựng theo cấp độ học TOEIC. Chọn theo các mức điểm bên dưới. Advanced là tính năng Premium."),
+        FeatureTourStep("level_filter", "Cấp độ (TOEIC)", "Lọc từ vựng theo dải điểm TOEIC. 800+ là tính năng Premium."),
         FeatureTourStep("streak_area", "Chuỗi ngày học", "Chạm vào đây để xem chi tiết chuỗi ngày học và mẹo duy trì chuỗi. Bạn cũng có thể khôi phục chuỗi khi bị gián đoạn."),
         FeatureTourStep("daily_goal", "Việc học hôm nay và mục tiêu hằng ngày", "Xem tiến độ hôm nay và chọn lượng học mỗi ngày ở các lựa chọn bên dưới."),
         FeatureTourStep("flashcard_tab", "Thẻ từ", "Chạm vào thẻ để xem nghĩa, câu ví dụ và các kết hợp từ."),
@@ -468,7 +474,7 @@ fun mainFeatureTourSteps(strings: AppStrings): List<FeatureTourStep> = (when (st
         FeatureTourStep("settings_button", "설정", "표시 언어, 백업 및 복원을 관리합니다."),
         FeatureTourStep("progress_section", "학습 진행률", "아직 마스터하지 않은 단어, 전체 단어 수, 즐겨찾기와 마스터한 단어 수를 확인하세요."),
         FeatureTourStep("progress_search", "학습 진행률 검색", "돋보기를 탭하면 단어나 뜻으로 단어를 검색할 수 있습니다. 찾은 단어는 단어 카드에서 확인할 수 있습니다."),
-        FeatureTourStep("level_filter", "레벨 (TOEIC)", "TOEIC 학습 레벨별로 단어를 필터링할 수 있습니다. 아래 점수를 기준으로 선택하며 Advanced는 프리미엄 기능입니다."),
+        FeatureTourStep("level_filter", "레벨 (TOEIC)", "TOEIC 점수대별로 단어를 필터링할 수 있습니다. 800+는 프리미엄 기능입니다."),
         FeatureTourStep("streak_area", "연속 학습", "여기를 탭해 연속 학습 상세 정보와 연속 학습을 유지하는 팁을 확인하세요. 연속 학습이 끊겼을 때 복구할 수도 있습니다."),
         FeatureTourStep("daily_goal", "오늘 학습과 일일 목표", "오늘의 학습 상황을 확인하고 아래 선택지에서 하루 학습량을 설정하세요."),
         FeatureTourStep("flashcard_tab", "단어 카드", "카드를 탭하면 뜻, 예문, 연어가 표시됩니다."),
@@ -486,7 +492,7 @@ fun mainFeatureTourSteps(strings: AppStrings): List<FeatureTourStep> = (when (st
         FeatureTourStep("settings_button", "Pengaturan", "Kelola bahasa tampilan, pencadangan, dan pemulihan."),
         FeatureTourStep("progress_section", "Kemajuan belajar", "Lihat jumlah kata yang belum dikuasai, total kata, favorit, dan telah dikuasai."),
         FeatureTourStep("progress_search", "Pencarian kemajuan belajar", "Ketuk kaca pembesar untuk mencari kata berdasarkan kata atau artinya. Kata yang ditemukan dapat dilihat di kartu kata."),
-        FeatureTourStep("level_filter", "Level (TOEIC)", "Saring kata berdasarkan level belajar TOEIC. Pilih berdasarkan skor di bawah ini. Advanced adalah fitur Premium."),
+        FeatureTourStep("level_filter", "Level (TOEIC)", "Saring kata berdasarkan rentang skor TOEIC. 800+ adalah fitur Premium."),
         FeatureTourStep("streak_area", "Streak belajar", "Ketuk di sini untuk melihat detail dan tips mempertahankan streak belajar. Anda juga dapat memulihkan streak yang terputus."),
         FeatureTourStep("daily_goal", "Belajar hari ini dan target harian", "Lihat kemajuan hari ini dan pilih jumlah kata yang dipelajari setiap hari dari opsi di bawah."),
         FeatureTourStep("flashcard_tab", "Kartu kata", "Ketuk kartu untuk melihat arti, contoh kalimat, dan kolokasi."),
@@ -504,7 +510,7 @@ fun mainFeatureTourSteps(strings: AppStrings): List<FeatureTourStep> = (when (st
         FeatureTourStep("settings_button", "การตั้งค่า", "จัดการภาษาที่แสดง การสำรองข้อมูล และการกู้คืน"),
         FeatureTourStep("progress_section", "ความคืบหน้าการเรียน", "ดูจำนวนคำที่ยังไม่เชี่ยวชาญ จำนวนคำทั้งหมด คำโปรด และคำที่เชี่ยวชาญแล้ว"),
         FeatureTourStep("progress_search", "ค้นหาในความคืบหน้าการเรียน", "แตะไอคอนแว่นขยายเพื่อค้นหาคำศัพท์จากคำหรือความหมาย คำที่พบจะเปิดดูได้ในการ์ดคำศัพท์"),
-        FeatureTourStep("level_filter", "ระดับ (TOEIC)", "กรองคำศัพท์ตามระดับการเรียน TOEIC ได้ เลือกตามคะแนนด้านล่าง โดย Advanced เป็นฟีเจอร์พรีเมียม"),
+        FeatureTourStep("level_filter", "ระดับ (TOEIC)", "กรองคำศัพท์ตามช่วงคะแนน TOEIC ได้ โดย 800+ เป็นฟีเจอร์พรีเมียม"),
         FeatureTourStep("streak_area", "การเรียนต่อเนื่อง", "แตะที่นี่เพื่อดูรายละเอียดและเคล็ดลับรักษาสตรีคการเรียน และกู้คืนสตรีคที่ขาดช่วงได้"),
         FeatureTourStep("daily_goal", "การเรียนวันนี้และเป้าหมายรายวัน", "ดูความคืบหน้าวันนี้และเลือกปริมาณการเรียนต่อวันจากตัวเลือกด้านล่าง"),
         FeatureTourStep("flashcard_tab", "การ์ดคำศัพท์", "แตะการ์ดเพื่อดูความหมาย ตัวอย่างประโยค และวลีที่ใช้ร่วมกัน"),
@@ -522,7 +528,7 @@ fun mainFeatureTourSteps(strings: AppStrings): List<FeatureTourStep> = (when (st
         FeatureTourStep("settings_button", "Ajustes", "Gestiona el idioma de pantalla, las copias de seguridad y la restauración."),
         FeatureTourStep("progress_section", "Progreso de aprendizaje", "Consulta el número de palabras no dominadas, el total de palabras, las favoritas y las dominadas."),
         FeatureTourStep("progress_search", "Buscar en el progreso de aprendizaje", "Toca la lupa para buscar palabras por su palabra o significado. Puedes consultar el resultado en la tarjeta de palabra."),
-        FeatureTourStep("level_filter", "Nivel (TOEIC)", "Filtra las palabras por nivel de aprendizaje del TOEIC. Elige según las puntuaciones de abajo. Advanced es una función premium."),
+        FeatureTourStep("level_filter", "Nivel (TOEIC)", "Filtra las palabras por rango de puntuación del TOEIC. 800+ es una función premium."),
         FeatureTourStep("streak_area", "Racha de estudio", "Toca aquí para consultar los detalles y consejos para mantener tu racha. También puedes recuperar una racha interrumpida."),
         FeatureTourStep("daily_goal", "Estudio de hoy y objetivo diario", "Consulta tu progreso de hoy y elige tu cantidad diaria de estudio entre las opciones de abajo."),
         FeatureTourStep("flashcard_tab", "Tarjeta de palabra", "Toca la tarjeta para ver el significado, ejemplos y colocaciones."),
@@ -540,7 +546,7 @@ fun mainFeatureTourSteps(strings: AppStrings): List<FeatureTourStep> = (when (st
         FeatureTourStep("settings_button", "Settings", "Manage the display language, backup, and restore."),
         FeatureTourStep("progress_section", "Learning progress", "See the number of words not yet mastered, the total number of words, the number of favorites, and the number of mastered words."),
         FeatureTourStep("progress_search", "Search learning progress", "Tap the magnifying glass to search for words by word or meaning. Open a result in its flashcard."),
-        FeatureTourStep("level_filter", "Level (TOEIC)", "Filter words by TOEIC learning level. Choose from the score guides below. Advanced is a premium feature."),
+        FeatureTourStep("level_filter", "Level (TOEIC)", "Filter words by TOEIC score band. 800+ is a premium feature."),
         FeatureTourStep("streak_area", "Study streak", "Tap here to view streak details and tips for keeping your streak going. You can also recover an interrupted streak."),
         FeatureTourStep("daily_goal", "Today's study and daily goal", "View today's progress and choose your daily study amount from the options below."),
         FeatureTourStep("flashcard_tab", "Flashcard", "Tap a card to see its meaning, example sentence, and collocations."),
@@ -562,7 +568,7 @@ fun FeatureTourOverlay(
     copy: FeatureTourCopy,
     strings: AppStrings,
     buttonHelp: FlashcardButtonHelpCopy? = null,
-    selectedTargetLevel: String = "BASIC",
+    selectedTargetLevel: String = "TOEIC_500",
     levelWordCounts: Map<String, Int> = emptyMap(),
     premiumUnlocked: Boolean = true,
     onTargetLevelSelected: (String) -> Unit = {},

@@ -43,41 +43,48 @@ object HistoryAction {
 /**
  * 語彙レベルのフィルター。
  *
- * LEVEL1〜LEVEL5 は保存済み設定・旧テスト・内部データとの互換用に残し、
- * BASIC〜ADVANCED を現在のTOEICアプリの3段階表示に使う。
+ * LEVEL1〜LEVEL4 は assets の4つのTOEICスコア帯に対応する。
+ * LEVEL5 と BASIC〜ADVANCED は旧データ・旧設定との互換用に残す。
  */
 enum class VocabularyLevel {
     ALL,
-    LEVEL1, // TOEIC L1 Foundation
-    LEVEL2, // TOEIC L2 Academic Core
-    LEVEL3, // TOEIC L3 Academic
-    LEVEL4, // TOEIC L4 Advanced
-    LEVEL5, // 旧データ互換用。表示・フィルター上は ADVANCED に統合
-    BASIC,
-    STANDARD,
-    ADVANCED;
+    LEVEL1, // TOEIC 500+
+    LEVEL2, // TOEIC 600+
+    LEVEL3, // TOEIC 700+
+    LEVEL4, // TOEIC 800+
+    LEVEL5, // 旧アセット互換用。800+として扱う
+    BASIC, // 旧3段階の Basic（LEVEL1 + LEVEL2）
+    STANDARD, // 旧3段階の Standard（LEVEL3）
+    ADVANCED, // 旧3段階の Advanced（LEVEL4 + LEVEL5）
+    TOEIC_500,
+    TOEIC_600,
+    TOEIC_700,
+    TOEIC_800;
 
     fun matchesVocabularyItemLevel(itemLevel: Int): Boolean = when (this) {
         ALL -> true
-        LEVEL4 -> itemLevel == LEVEL4.ordinal || itemLevel == LEVEL5.ordinal
+        LEVEL1, TOEIC_500 -> itemLevel == LEVEL1.ordinal
+        LEVEL2, TOEIC_600 -> itemLevel == LEVEL2.ordinal
+        LEVEL3, TOEIC_700 -> itemLevel == LEVEL3.ordinal
+        LEVEL4, TOEIC_800 -> itemLevel == LEVEL4.ordinal || itemLevel == LEVEL5.ordinal
         LEVEL5 -> itemLevel == LEVEL5.ordinal
         BASIC -> itemLevel == LEVEL1.ordinal || itemLevel == LEVEL2.ordinal
         STANDARD -> itemLevel == LEVEL3.ordinal
         ADVANCED -> itemLevel == LEVEL4.ordinal || itemLevel == LEVEL5.ordinal
-        else -> itemLevel == ordinal
     }
 
-    /** 旧保存値を現在の3段階表示へ束ねる。enum ordinalは変更しない。 */
+    /** 旧保存値を現在の4段階表示へ束ねる。enum ordinalは変更しない。 */
     fun toStudyTier(): VocabularyLevel = when (this) {
-        LEVEL1, LEVEL2, BASIC -> BASIC
-        LEVEL3, STANDARD -> STANDARD
-        LEVEL4, LEVEL5, ADVANCED -> ADVANCED
+        LEVEL1, BASIC, TOEIC_500 -> TOEIC_500
+        LEVEL2, TOEIC_600 -> TOEIC_600
+        LEVEL3, STANDARD, TOEIC_700 -> TOEIC_700
+        LEVEL4, LEVEL5, ADVANCED, TOEIC_800 -> TOEIC_800
         ALL -> ALL
     }
 }
 
 /**
- * 上位レベル（ADVANCED = LEVEL4/旧LEVEL5）のみをプレミアム対象にする。
+ * 800+（旧ADVANCED / LEVEL4 / LEVEL5）のみをプレミアム対象にする。
  *
  * productionDebug/release の本番相当ビルドで true になる。
  * 通常の debug ビルドでは false とし、Advanced vocabulary を確認できるようにする。
@@ -87,7 +94,8 @@ val PREMIUM_LEVELS_LOCK_ENABLED = BuildConfig.PRODUCTION_MODE
 
 fun VocabularyLevel.requiresPremium(): Boolean =
     PREMIUM_LEVELS_LOCK_ENABLED &&
-        (this == VocabularyLevel.ADVANCED ||
+        (this == VocabularyLevel.TOEIC_800 ||
+            this == VocabularyLevel.ADVANCED ||
             this == VocabularyLevel.LEVEL4 ||
             this == VocabularyLevel.LEVEL5)
 
@@ -141,7 +149,7 @@ class VocabularyViewModel @Inject constructor(
         premiumBillingState
     ) { level, billingState ->
         if (level.requiresPremium() && !billingState.isPremiumUnlocked()) {
-            VocabularyLevel.BASIC
+            VocabularyLevel.TOEIC_500
         } else {
             level
         }
@@ -435,7 +443,7 @@ private fun accessibleLevel(
     level: VocabularyLevel,
     access: PremiumAccess
 ): VocabularyLevel = if (level.requiresPremium() && !access.isPremiumUnlocked()) {
-    VocabularyLevel.BASIC
+    VocabularyLevel.TOEIC_500
 } else {
     level.toStudyTier()
 }

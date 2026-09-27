@@ -31,6 +31,12 @@ Kotlin と Jetpack Compose で作成する、TOEIC 向け英単語学習 Android
 ./gradlew test
 ```
 
+語彙データを再構築する場合は、次のスクリプトを実行してください。既存語彙の整理・ビジネス語彙の追加に続けて、例文とCollocationsのネイティブ品質チェックおよび翻訳インデックスの同期まで行います。
+
+```bash
+python3 scripts/rebuild_toeic_vocabulary.py
+```
+
 Android Studio ではプロジェクトルートを開き、`app` モジュールを実行してください。
 
 ## ディレクトリ
@@ -46,3 +52,5 @@ app/src/main/java/com/gachiguild/gachitoeic/
 ## 注意
 
 TOEIC は ETS の登録商標です。本アプリは ETS と提携・承認・認可されていません。
+
+プライバシーポリシー: https://hajadon187-a11y.github.io/gg-toeic-privacy-policy/

@@ -16,6 +16,9 @@ local.properties
 # 機密情報（APIキー等）を含むためコミットしない
 gradle.properties
 secrets.properties
+.env
+.env.*
+!.env.example
 
 # Android署名鍵・署名設定（絶対にGitHubへアップロードしない）
 *.jks

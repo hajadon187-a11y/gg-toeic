@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Review 700+ examples 601-750 in English and Japanese."""
+from __future__ import annotations
+import json
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+VOCAB_PATH=ROOT/"app/src/main/assets/vocabulary.json"
+PHRASE_PATH=ROOT/"app/src/main/assets/vocabulary_phrase_translations.json"
+
+EN={
+"leaf":"The designer added a leaf motif to the company's new packaging.",
+"legend":"The map includes a legend explaining each delivery zone.",
+"leisure":"The resort offers leisure activities for conference guests.",
+"lever":"The manager used customer feedback as a lever for improving service.",
+"lifestyle":"The survey examines how the product fits customers' lifestyles.",
+"lifetime":"The manufacturer offers a lifetime warranty on the equipment.",
+"likelihood":"The forecast estimates the likelihood of delays during the holiday season.",
+"likewise":"The eastern branch reported higher sales, and the western branch did likewise.",
+"limb":"The clinic treated an employee who injured a limb at work.",
+"linear":"The analyst used a linear model to estimate monthly demand.",
+"linguistic":"The app uses linguistic data to improve its translation feature.",
+"linguistics":"The company hired a specialist in linguistics to review the training content.",
+"liter":"The technician added one liter of coolant to the machine.",
+"liver":"The clinic helped the patient arrange a liver examination.",
+"locally":"The restaurant sources its vegetables locally.",
+"logical":"The proposal presents a logical solution to the storage problem.",
+"loop":"The software creates a feedback loop between customers and support staff.",
+"lump":"The inspector found a lump in the material shipment.",
+"lung":"The clinic scheduled a lung examination for the employee.",
+"magnetic":"The warehouse uses magnetic strips to secure access cards.",
+"magnitude":"The report shows the magnitude of the recent increase in demand.",
+"mall":"The company opened a kiosk in the city's largest mall.",
+"manipulate":"The new controls allow operators to manipulate the machine safely.",
+"manipulation":"The audit detected the manipulation of several sales records.",
+"manual":"Please read the equipment manual before operating the machine.",
+"manuscript":"The editor reviewed the manuscript for the company's training guide.",
+"marble":"The hotel replaced a cracked marble tile in the lobby.",
+"marker":"The technician placed a marker beside the damaged cable.",
+"marrow":"The hospital arranged a marrow test for the patient.",
+"maternal":"The company expanded its maternal leave policy.",
+"mathematical":"The analyst checked the mathematical formula used in the forecast.",
+"maximize":"The new layout will maximize space in the customer service area.",
+"meaningful":"The survey provides meaningful information about customer preferences.",
+"mechanic":"The mechanic inspected the delivery truck before departure.",
+"mechanical":"The engineer found a mechanical problem in the conveyor system.",
+"media":"The company issued a statement to the media after the announcement.",
+"membrane":"The technician replaced the protective membrane on the filter.",
+"memorize":"New employees must memorize the emergency contact number.",
+"mentor":"The senior manager agreed to mentor two junior employees.",
+"mercury":"The laboratory follows strict rules when handling mercury.",
+"merge":"The two departments will merge at the start of the next quarter.",
+"messenger":"The office messenger delivered the signed contract to the client.",
+"metabolism":"The clinic explained how exercise can affect metabolism.",
+"metaphor":"The speaker used a simple metaphor to explain the service plan.",
+"micro":"The company sells micro sensors for industrial equipment.",
+"mid":"The supplier expects to complete the order by mid-September.",
+"migrate":"The IT team will migrate the customer database overnight.",
+"migration":"The database migration will require a brief service interruption.",
+"millimeter":"The engineer measured the part to the nearest millimeter.",
+"mineral":"The laboratory tested the water for mineral content.",
+"minimal":"The repair caused minimal disruption to production.",
+"minimize":"The new procedure is designed to minimize processing errors.",
+"minus":"The invoice total is 500 dollars, minus the early-payment discount.",
+"missile":"The museum displayed a model of a missile in its history exhibit.",
+"mobility":"The company provides mobility support for employees with injuries.",
+"modification":"The engineer requested a modification to the equipment design.",
+"mole":"The doctor examined a mole during the employee's health check.",
+"molecular":"The research team studied the molecular structure of the material.",
+"molecule":"The scientist explained how each molecule reacts to heat.",
+"momentum":"The marketing campaign gained momentum after several positive reviews.",
+"monkey":"The wildlife center hired a specialist to care for an injured monkey.",
+"motive":"The investigator asked about the motive for changing the records.",
+"multinational":"The multinational company operates offices in twelve countries.",
+"multiply":"Please multiply the unit price by the number of items ordered.",
+"myth":"The training session corrected the myth that the software is difficult to use.",
+"naked":"The inspector found a naked wire inside the control panel.",
+"namely":"The shipment has one problem, namely, a missing safety label.",
+"nasty":"The cleaning crew removed a nasty odor from the storage room.",
+"neat":"The applicant submitted a neat and well-organized résumé.",
+"necessity":"The manager explained the necessity of updating the security system.",
+"nest":"The construction plan protects a bird's nest near the site.",
+"neutral":"The mediator remained neutral during the contract discussion.",
+"nicely":"The new shelves fit nicely into the renovated stockroom.",
+"nitrogen":"The laboratory stores nitrogen in a specially marked tank.",
+"noble":"The company supports a noble goal by funding local education.",
+"noisy":"The renovation made the office too noisy for phone calls.",
+"norm":"The response time is well below the industry norm.",
+"nucleus":"The new service will form the nucleus of the company's digital strategy.",
+"numerical":"The analyst corrected a numerical error in the sales report.",
+"objection":"The buyer raised an objection to the proposed delivery date.",
+"observer":"An independent observer attended the quality inspection.",
+"occupation":"Please state your occupation on the registration form.",
+"occurrence":"The system records every occurrence of a processing error.",
+"offspring":"The wildlife project monitors the offspring of protected animals.",
+"onwards":"The revised policy will apply from July onwards.",
+"optical":"The technician cleaned the optical sensor on the scanner.",
+"oral":"The candidate completed an oral interview with the hiring manager.",
+"organ":"The hospital arranged an organ donation consultation.",
+"organism":"The laboratory identified a harmless organism in the sample.",
+"orientation":"All new employees attend a company orientation session.",
+"outer":"The outer package was damaged, but the product was unharmed.",
+"outlet":"The manufacturer opened a new retail outlet near the station.",
+"overhead":"The company reduced overhead by moving to a smaller office.",
+"overlap":"There is some overlap between the two departments' responsibilities.",
+"overview":"The director gave an overview of next year's business plan.",
+"oxygen":"The clinic checked the patient's oxygen level.",
+"painful":"The employee reported a painful injury to the workplace nurse.",
+"par":"The new system performs on par with more expensive alternatives.",
+"parcel":"The courier left the parcel at the reception desk.",
+"pardon":"Pardon me, could you repeat the delivery address?",
+"parental":"The company offers parental leave to eligible employees.",
+"partial":"The supplier issued a partial refund for the damaged goods.",
+"partially":"The warehouse was partially closed during the inspection.",
+"particle":"The filter removes fine particles from the production air.",
+"partition":"The office added a partition between the two work areas.",
+"pathway":"The training program provides a clear pathway to promotion.",
+"peasant":"The museum exhibit shows how a peasant family lived in the region.",
+"periodic":"The equipment requires periodic safety checks.",
+"pest":"The hotel called a specialist to remove a pest from the kitchen.",
+"pesticide":"The farm uses less pesticide by adopting a new irrigation method.",
+"philosopher":"The university invited a philosopher to speak at the company ethics event.",
+"philosophical":"The manager took a philosophical approach to the difficult decision.",
+"photographic":"The report includes photographic evidence of the damaged equipment.",
+"physically":"The package is physically too large for the standard locker.",
+"physician":"The physician advised the employee to take two days off.",
+"physics":"The engineer applied physics to improve the heating system.",
+"pi":"The analyst used pi to complete the circular-area calculation.",
+"planner":"The event planner confirmed the room setup with the hotel.",
+"plantation":"The company buys coffee from a certified plantation.",
+"plug":"Please plug the scanner into the outlet beside the desk.",
+"plural":"The editor changed the noun to its plural form.",
+"polar":"The research team studies polar conditions before planning the expedition.",
+"pole":"The technician replaced the damaged pole beside the sign.",
+"politically":"The project is politically sensitive because it affects public land.",
+"portray":"The advertisement aims to portray the company as environmentally responsible.",
+"portrayal":"The article offers a positive portrayal of the new service.",
+"positively":"Customers responded positively to the redesigned website.",
+"poster":"The manager placed a safety poster near the elevator.",
+"postgraduate":"The company recruited a postgraduate student for its research team.",
+"potassium":"The nutrition label lists the amount of potassium in each serving.",
+"powder":"The technician mixed the powder with water in a sealed container.",
+"pre":"The pre-launch meeting will take place on Monday morning.",
+"precede":"A short safety briefing will precede the factory tour.",
+"precipitation":"The weather service warned that precipitation could delay deliveries.",
+"predator":"The conservation team monitors the predator population in the reserve.",
+"prediction":"The sales prediction was revised after the supplier raised its prices.",
+"prejudice":"The hiring policy prohibits prejudice based on age or nationality.",
+"presume":"We presume that the client has received the revised contract.",
+"prey":"The wildlife center protects smaller animals from predators that hunt them as prey.",
+"primitive":"The museum displays primitive tools used by early communities.",
+"problematic":"The audit found several problematic entries in the expense report.",
+"processor":"The technician replaced the processor in the office computer.",
+"productive":"The morning meeting was short and highly productive.",
+"progression":"The course follows a clear progression from basic to advanced skills.",
+"progressive":"The company introduced a progressive training program for supervisors.",
+"prominent":"The product was featured in a prominent position on the website.",
+"pronounce":"The announcer practiced how to pronounce the guest's name.",
+"proposition":"The sales representative presented a proposition to the potential client.",
+"protocol":"All visitors must follow the laboratory's safety protocol.",
+"proton":"The researcher explained the role of a proton in the experiment.",
+}
+
+JA={
+"leaf":"デザイナーは会社の新しい包装に葉の模様を加えた。","legend":"地図には各配送区域を説明する凡例がある。","leisure":"リゾートは会議参加者向けにレジャー活動を提供している。","lever":"マネージャーは顧客の意見をサービス改善のてこにした。","lifestyle":"この調査は製品が顧客の生活様式にどう合うかを調べる。","lifetime":"メーカーは機器に生涯保証を付けている。","likelihood":"予測では休日期間中に遅延が起きる可能性を見積もっている。","likewise":"東支店の売上が伸び、西支店も同様だった。","limb":"診療所は職場で手足を負傷した従業員を治療した。","linear":"アナリストは線形モデルで月間需要を推定した。","linguistic":"アプリは翻訳機能を改善するため言語データを使う。","linguistics":"会社は研修内容を確認するため言語学の専門家を雇った。","liter":"技術者は機械に冷却液を1リットル加えた。","liver":"診療所は患者の肝臓検査を手配した。","locally":"レストランは野菜を地元で仕入れている。","logical":"提案書は保管上の問題に対する論理的な解決策を示している。","loop":"ソフトウェアは顧客とサポート担当者の間にフィードバックの循環を作る。","lump":"検査員は納品された素材の中に塊を見つけた。","lung":"診療所は従業員の肺検査を予定した。","magnetic":"倉庫は入館カードを固定するため磁気ストリップを使っている。","magnitude":"報告書は最近の需要増加の規模を示している。","mall":"会社は市内最大のショッピングモールに売店を開いた。","manipulate":"新しい操作部で作業員は機械を安全に操作できる。","manipulation":"監査で複数の売上記録の改ざんが見つかった。","manual":"機械を操作する前に機器のマニュアルを読んでください。","manuscript":"編集者は会社の研修ガイドの原稿を確認した。","marble":"ホテルはロビーのひび割れた大理石のタイルを交換した。","marker":"技術者は破損したケーブルのそばに目印を置いた。","marrow":"病院は患者の骨髄検査を手配した。","maternal":"会社は産休制度を拡充した。","mathematical":"アナリストは予測に使った数学的な式を確認した。","maximize":"新しい配置で顧客サービス区域の空間を最大限に活用できる。","meaningful":"この調査は顧客の好みについて有意義な情報を提供する。","mechanic":"整備士は出発前に配送トラックを点検した。","mechanical":"技術者は搬送システムに機械的な問題を見つけた。","media":"会社は発表後、メディア向けに声明を出した。","membrane":"技術者はフィルターの保護膜を交換した。","memorize":"新入社員は緊急連絡先を暗記しなければならない。","mentor":"上級マネージャーは若手社員2人の指導役を引き受けた。","mercury":"研究所は水銀を扱う際に厳格な規則に従う。","merge":"2つの部署は次の四半期の初めに統合される。","messenger":"社内便の担当者は署名済み契約書を顧客に届けた。","metabolism":"診療所は運動が代謝に与える影響を説明した。","metaphor":"講演者はサービス計画を説明するため簡単なたとえを使った。","micro":"会社は産業機器用の小型センサーを販売している。","mid":"仕入先は9月半ばまでに注文を完了する予定だ。","migrate":"ITチームは夜間に顧客データベースを移行する。","migration":"データベース移行には短時間のサービス停止が必要だ。","millimeter":"技術者は部品を1ミリ単位で測定した。","mineral":"研究所は水のミネラル含有量を検査した。","minimal":"修理による生産への影響は最小限だった。","minimize":"新しい手順は処理ミスを最小限に抑えるよう設計されている。","minus":"請求額は早期支払割引を差し引いて500ドルだ。","missile":"博物館は歴史展示でミサイルの模型を公開した。","mobility":"会社は負傷した従業員に移動支援を提供している。","modification":"技術者は機器設計の変更を求めた。","mole":"医師は健康診断で従業員のほくろを調べた。","molecular":"研究チームは素材の分子構造を研究した。","molecule":"科学者は各分子が熱にどう反応するか説明した。","momentum":"マーケティングキャンペーンは好意的な口コミの後、勢いを増した。","monkey":"野生動物センターは負傷したサルの世話をする専門家を雇った。","motive":"調査員は記録を変更した動機について尋ねた。","multinational":"その多国籍企業は12か国に事業所を置いている。","multiply":"単価に注文数を掛けてください。","myth":"研修でソフトウェアは使いにくいという俗説を正した。","naked":"検査員は制御盤の中にむき出しの電線を見つけた。","namely":"出荷品には1つ問題がある、つまり安全ラベルがない。","nasty":"清掃員は保管室のひどい臭いを取り除いた。","neat":"応募者は整った見やすい履歴書を提出した。","necessity":"マネージャーはセキュリティシステム更新の必要性を説明した。","nest":"建設計画は現場近くの鳥の巣を保護している。","neutral":"調停者は契約協議中、中立の立場を保った。","nicely":"新しい棚は改装した倉庫にきれいに収まった。","nitrogen":"研究所は窒素を専用表示のタンクに保管している。","noble":"会社は地域教育に資金を出し、崇高な目標を支援している。","noisy":"改装工事で電話をかけるにはオフィスがうるさくなった。","norm":"応答時間は業界標準を大きく下回っている。","nucleus":"新サービスは会社のデジタル戦略の中核になる。","numerical":"アナリストは売上報告書の数値上の誤りを直した。","objection":"買い手は提案された納期に異議を唱えた。","observer":"独立した立会人が品質検査に参加した。","occupation":"登録フォームに職業を記入してください。","occurrence":"システムは処理エラーが発生するたびに記録する。","offspring":"保護動物の子どもを保全プロジェクトが監視している。","onwards":"改訂方針は7月以降適用される。","optical":"技術者はスキャナーの光学センサーを清掃した。","oral":"候補者は採用責任者との口頭面接を受けた。","organ":"病院は臓器提供に関する相談を手配した。","organism":"研究所は試料から無害な生物を特定した。","orientation":"新入社員は全員、会社説明会に参加する。","outer":"外側の包装は破損していたが、製品は無事だった。","outlet":"メーカーは駅の近くに新しい小売店を開いた。","overhead":"会社は小さなオフィスへ移転して間接費を削減した。","overlap":"2つの部署の責任には一部重複がある。","overview":"取締役は来年度の事業計画の概要を説明した。","oxygen":"診療所は患者の酸素濃度を確認した。","painful":"従業員は痛みのあるけがを職場の看護師に報告した。","par":"新しいシステムは高価な代替製品と同等の性能を発揮する。","parcel":"宅配業者は荷物を受付に預けた。","pardon":"すみません、配送先住所をもう一度言っていただけますか。","parental":"会社は対象従業員に育児休暇を提供している。","partial":"仕入先は破損品について一部返金した。","partially":"検査中、倉庫は一部閉鎖された。","particle":"そのフィルターは製造区域の空気から微粒子を除去する。","partition":"オフィスは2つの作業区域の間に間仕切りを設置した。","pathway":"研修制度は昇進への明確な道筋を示す。","peasant":"博物館の展示はその地域の農民の暮らしを紹介している。","periodic":"その機器には定期的な安全点検が必要だ。","pest":"ホテルは厨房の害虫を取り除く専門業者を呼んだ。","pesticide":"農場は新しい灌漑方法を導入して農薬の使用量を減らしている。","philosopher":"大学は会社の倫理イベントに哲学者を招いた。","philosophical":"マネージャーは難しい決定に哲学的な姿勢で臨んだ。","photographic":"報告書には破損した機器の写真による証拠が含まれている。","physically":"その荷物は標準ロッカーに物理的に入らないほど大きい。","physician":"医師は従業員に2日間休むよう助言した。","physics":"技術者は暖房システムの改善に物理学を応用した。","pi":"アナリストは円の面積計算を完成させるため円周率を使った。","planner":"イベント企画担当者はホテルと会場設営を確認した。","plantation":"会社は認証を受けた農園からコーヒーを仕入れている。","plug":"スキャナーを机の横のコンセントに差し込んでください。","plural":"編集者は名詞を複数形に変えた。","polar":"研究チームは遠征計画前に極地の状況を調査している。","pole":"技術者は看板脇の破損した柱を交換した。","politically":"その計画は公有地に影響するため政治的に敏感だ。","portray":"広告は会社を環境に配慮する企業として描くことを目指す。","portrayal":"記事は新サービスを肯定的に描いている。","positively":"顧客は刷新されたウェブサイトに好意的に反応した。","poster":"マネージャーはエレベーターの近くに安全ポスターを貼った。","postgraduate":"会社は研究チームに大学院生を採用した。","potassium":"栄養表示には1食分のカリウム量が記載されている。","powder":"技術者は密閉容器で粉末を水と混ぜた。","pre":"発売前会議は月曜の朝に行われる。","precede":"短い安全説明会を工場見学に先立って行う。","precipitation":"気象サービスは降水によって配送が遅れる可能性を警告した。","predator":"保全チームは保護区の捕食動物の数を監視している。","prediction":"仕入先の値上げを受け、売上予測を修正した。","prejudice":"採用方針は年齢や国籍による偏見を禁じている。","presume":"顧客は改訂版契約書を受け取ったものと考えています。","prey":"野生動物センターは捕食動物に狙われる小動物を保護している。","primitive":"博物館は初期の共同体が使った原始的な道具を展示している。","problematic":"監査で経費報告書に問題のある記載がいくつか見つかった。","processor":"技術者はオフィスコンピューターのプロセッサーを交換した。","productive":"午前の会議は短く、とても生産的だった。","progression":"この講座は基礎から上級技能へ明確に進む。","progressive":"会社は監督者向けに先進的な研修制度を導入した。","prominent":"製品はウェブサイトの目立つ位置で紹介された。","pronounce":"アナウンサーは来賓の名前の発音を練習した。","proposition":"営業担当者は見込み客に提案を示した。","protocol":"来訪者は全員、研究所の安全手順に従わなければならない。","proton":"研究者は実験における陽子の役割を説明した。",
+}
+
+def main() -> None:
+    vocabulary=json.loads(VOCAB_PATH.read_text(encoding="utf-8"))
+    phrase_root=json.loads(PHRASE_PATH.read_text(encoding="utf-8"))
+    translations=phrase_root.setdefault("translations",{})
+    rows=[x for x in vocabulary if int(x.get("level",0))==3][600:750]
+    expected={str(x["word"]).casefold() for x in rows}
+    assert set(EN)==expected and set(JA)==expected
+    changed=0
+    for item in rows:
+        word=str(item["word"]).casefold(); source=EN[word]
+        item["example"]=source
+        ex=translations.setdefault(f"builtin:{item['id']}",{}).setdefault("example",{})
+        for field,value in (("source",source),("en",source),("ja",JA[word])):
+            if ex.get(field)!=value: ex[field]=value; changed+=1
+    VOCAB_PATH.write_text(json.dumps(vocabulary,ensure_ascii=False,indent=1)+"\n",encoding="utf-8")
+    PHRASE_PATH.write_text(json.dumps(phrase_root,ensure_ascii=False,indent=1)+"\n",encoding="utf-8")
+    print(f"reviewed 700+ English/Japanese examples batch 2c: {len(rows)} terms, {changed} fields")
+
+if __name__=="__main__": main()

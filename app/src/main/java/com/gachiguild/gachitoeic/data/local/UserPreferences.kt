@@ -29,7 +29,7 @@ class UserPreferences @Inject constructor(
         private const val MAIN_FEATURE_TOUR_VERSION_KEY = "main_feature_tour_version"
         // キー名は既存インストールとの互換性のため維持する。保存値はTOEIC L1〜L4。
         private const val TARGET_LEVEL_KEY = "target_level"
-        private const val DEFAULT_TARGET_LEVEL = "BASIC"
+        private const val DEFAULT_TARGET_LEVEL = "TOEIC_500"
         private const val AI_PROVIDER_PACKAGE_KEY = "ai_provider_package"
         private const val NOTIFICATION_PERMISSION_REQUESTED_KEY = "notification_permission_requested"
     }
@@ -53,14 +53,14 @@ class UserPreferences @Inject constructor(
         prefs.edit().putBoolean(BUTTON_SOUND_ENABLED_KEY, enabled).apply()
     }
 
-    /** 学習進捗のレベルフィルターを取得（旧LEVEL1〜4/5は3段階へ移行） */
+    /** 学習進捗のレベルフィルターを取得（旧3段階設定も4段階へ移行） */
     fun getVocabularyLevel(): VocabularyLevel = runCatching {
         val storedLevel = VocabularyLevel.valueOf(
             prefs.getString(VOCABULARY_LEVEL_KEY, VocabularyLevel.LEVEL1.name)
                 ?: VocabularyLevel.LEVEL1.name
         )
         storedLevel.toStudyTier()
-    }.getOrDefault(VocabularyLevel.BASIC)
+    }.getOrDefault(VocabularyLevel.TOEIC_500)
 
     /** 学習進捗のレベルフィルターを保存 */
     fun setVocabularyLevel(level: VocabularyLevel) {
@@ -98,16 +98,19 @@ class UserPreferences @Inject constructor(
     fun getTargetLevel(): String = when (
         prefs.getString(TARGET_LEVEL_KEY, DEFAULT_TARGET_LEVEL) ?: DEFAULT_TARGET_LEVEL
     ) {
-        "BASIC", "Basic", "L1", "L2" -> "BASIC"
-        "STANDARD", "Standard", "L3" -> "STANDARD"
-        "ADVANCED", "Advanced", "L4" -> "ADVANCED"
+        "TOEIC_500", "BASIC", "Basic", "L1", "L2" -> "TOEIC_500"
+        "TOEIC_600" -> "TOEIC_600"
+        "TOEIC_700", "STANDARD", "Standard", "L3" -> "TOEIC_700"
+        "TOEIC_800", "ADVANCED", "Advanced", "L4" -> "TOEIC_800"
         else -> DEFAULT_TARGET_LEVEL
     }
 
     fun setTargetLevel(level: String) {
         val normalizedLevel = when (level) {
-            "STANDARD", "Standard", "L3" -> "STANDARD"
-            "ADVANCED", "Advanced", "L4" -> "ADVANCED"
+            "TOEIC_500", "BASIC", "Basic", "L1", "L2" -> "TOEIC_500"
+            "TOEIC_600" -> "TOEIC_600"
+            "TOEIC_700", "STANDARD", "Standard", "L3" -> "TOEIC_700"
+            "TOEIC_800", "ADVANCED", "Advanced", "L4" -> "TOEIC_800"
             else -> DEFAULT_TARGET_LEVEL
         }
         prefs.edit().putString(TARGET_LEVEL_KEY, normalizedLevel).apply()

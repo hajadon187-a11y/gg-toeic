@@ -2,6 +2,8 @@
 
 最終更新日: 2026-09-26
 
+公開ページ: https://hajadon187-a11y.github.io/gg-toeic-privacy-policy/
+
 本アプリ「Gachi Guild Flashcard for TOEIC（GG TOEIC）」は、Gachi Guild（以下「運営者」）が提供します。
 
 ## 収集する情報

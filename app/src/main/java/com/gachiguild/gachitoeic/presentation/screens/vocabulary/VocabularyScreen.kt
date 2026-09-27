@@ -291,14 +291,17 @@ fun VocabularyScreen(
     val allVocabulary by viewModel.allVocabulary.collectAsState()
     val featureTourLevelWordCounts = remember(allVocabulary) {
         mapOf(
-            "BASIC" to allVocabulary.count {
-                VocabularyLevel.BASIC.matchesVocabularyItemLevel(it.level)
+            "TOEIC_500" to allVocabulary.count {
+                VocabularyLevel.TOEIC_500.matchesVocabularyItemLevel(it.level)
             },
-            "STANDARD" to allVocabulary.count {
-                VocabularyLevel.STANDARD.matchesVocabularyItemLevel(it.level)
+            "TOEIC_600" to allVocabulary.count {
+                VocabularyLevel.TOEIC_600.matchesVocabularyItemLevel(it.level)
             },
-            "ADVANCED" to allVocabulary.count {
-                VocabularyLevel.ADVANCED.matchesVocabularyItemLevel(it.level)
+            "TOEIC_700" to allVocabulary.count {
+                VocabularyLevel.TOEIC_700.matchesVocabularyItemLevel(it.level)
+            },
+            "TOEIC_800" to allVocabulary.count {
+                VocabularyLevel.TOEIC_800.matchesVocabularyItemLevel(it.level)
             }
         )
     }
@@ -306,14 +309,14 @@ fun VocabularyScreen(
     var searchQuery by remember { mutableStateOf("") }
     var showWordCardSearchDialog by remember { mutableStateOf(false) }
     var wordSearchInitialQuery by remember { mutableStateOf("") }
-    // 検索ダイアログで Advanced の単語を選んだとき、検索ダイアログが閉じた後に
+    // 検索ダイアログで800+の単語を選んだとき、検索ダイアログが閉じた後に
     // プレミアム購入ガイドを表示するためのフラグ。
     var pendingPremiumGuideFromSearch by remember { mutableStateOf(false) }
     var requestedWordCardId by remember { mutableStateOf<Long?>(null) }
     // カエルタップ時に単語カードの現在位置・裏面表示も初期化するためのキー。
     var screenResetKey by remember { mutableStateOf(0) }
 
-    // 起動時に Google Play の購入済み商品を確認し、Advanced の解放状態を復元する。
+    // 起動時に Google Play の購入済み商品を確認し、800+の解放状態を復元する。
     LaunchedEffect(Unit) {
         viewModel.refreshPremiumAccess()
     }
@@ -437,7 +440,7 @@ fun VocabularyScreen(
     /**
      * 検索ダイアログから単語が選ばれたときの入口。
      *
-     * TOEIC L4 はプレミアム対象のため、未購入なら単語カードを開かずに
+     * TOEIC 800+ はプレミアム対象のため、未購入なら単語カードを開かずに
      * 購入ガイド（PremiumPurchaseDialog）を表示して解放を案内する。
      */
     fun onSearchedWordSelected(item: VocabularyItem) {
@@ -802,7 +805,7 @@ fun VocabularyScreen(
                     onWordSelected = ::onSearchedWordSelected
                 )
             }
-            // 検索ダイアログから Advanced の単語を選んだときは、ダイアログが閉じた後に
+            // 検索ダイアログから800+の単語を選んだときは、ダイアログが閉じた後に
             // プレミアム購入ガイドを表示する。
             LaunchedEffect(showWordCardSearchDialog) {
                 if (!showWordCardSearchDialog && pendingPremiumGuideFromSearch) {
@@ -841,7 +844,7 @@ fun VocabularyScreen(
                     strings = strings,
                     state = premiumBillingState,
                     premiumWordCount = allVocabulary.count {
-                        VocabularyLevel.ADVANCED.matchesVocabularyItemLevel(it.level)
+                        VocabularyLevel.TOEIC_800.matchesVocabularyItemLevel(it.level)
                     },
                     onPurchase = {
                         (context as? Activity)?.let(viewModel::purchasePremium)
@@ -2290,49 +2293,53 @@ private fun translationTtsLanguage(languageCode: String): String = when (languag
 }
 
 private fun targetLevelToVocabularyLevel(targetLevel: String): VocabularyLevel = when (targetLevel) {
-    "STANDARD", "Standard", "L3" -> VocabularyLevel.STANDARD
-    "ADVANCED", "Advanced", "L4" -> VocabularyLevel.ADVANCED
-    else -> VocabularyLevel.BASIC
+    "TOEIC_500", "500+", "BASIC", "Basic", "L1", "L2" -> VocabularyLevel.TOEIC_500
+    "TOEIC_600", "600+" -> VocabularyLevel.TOEIC_600
+    "TOEIC_700", "700+", "STANDARD", "Standard", "L3" -> VocabularyLevel.TOEIC_700
+    "TOEIC_800", "800+", "ADVANCED", "Advanced", "L4" -> VocabularyLevel.TOEIC_800
+    else -> VocabularyLevel.TOEIC_500
 }
 
 private fun targetLevelToFeatureTourBand(targetLevel: String): String = when (targetLevel) {
-    "L3", "STANDARD" -> "STANDARD"
-    "L4", "ADVANCED" -> "ADVANCED"
-    else -> "BASIC"
+    "TOEIC_600" -> "TOEIC_600"
+    "TOEIC_700", "L3", "STANDARD" -> "TOEIC_700"
+    "TOEIC_800", "L4", "ADVANCED" -> "TOEIC_800"
+    else -> "TOEIC_500"
 }
 
 private fun featureTourBandToTargetLevel(band: String): String = when (band) {
-    "STANDARD" -> "STANDARD"
-    "ADVANCED" -> "ADVANCED"
-    else -> "BASIC"
+    "TOEIC_600" -> "TOEIC_600"
+    "TOEIC_700" -> "TOEIC_700"
+    "TOEIC_800" -> "TOEIC_800"
+    else -> "TOEIC_500"
 }
 
 private fun vocabularyItemLevel(level: Int): String = when (level) {
-    VocabularyLevel.LEVEL1.ordinal,
-    VocabularyLevel.LEVEL2.ordinal -> "Basic"
-    VocabularyLevel.LEVEL3.ordinal -> "Standard"
+    VocabularyLevel.LEVEL1.ordinal -> "500+"
+    VocabularyLevel.LEVEL2.ordinal -> "600+"
+    VocabularyLevel.LEVEL3.ordinal -> "700+"
     VocabularyLevel.LEVEL4.ordinal,
-    VocabularyLevel.LEVEL5.ordinal -> "Advanced"
-    else -> "Basic"
+    VocabularyLevel.LEVEL5.ordinal -> "800+"
+    else -> "500+"
 }
 
 private fun vocabularyItemLevelLabel(level: Int): String = when (level) {
-    VocabularyLevel.LEVEL1.ordinal,
-    VocabularyLevel.LEVEL2.ordinal -> "Basic"
-    VocabularyLevel.LEVEL3.ordinal -> "Standard"
+    VocabularyLevel.LEVEL1.ordinal -> "500+"
+    VocabularyLevel.LEVEL2.ordinal -> "600+"
+    VocabularyLevel.LEVEL3.ordinal -> "700+"
     VocabularyLevel.LEVEL4.ordinal,
-    VocabularyLevel.LEVEL5.ordinal -> "Advanced"
-    else -> "Basic"
+    VocabularyLevel.LEVEL5.ordinal -> "800+"
+    else -> "500+"
 }
 
 /**
- * 単語データの level がプレミアム対象（TOEIC Advanced = LEVEL4 / 旧LEVEL5）かどうか。
+ * 単語データの level がプレミアム対象（TOEIC 800+ = LEVEL4 / 旧LEVEL5）かどうか。
  *
  * [VocabularyLevel.requiresPremium] はロック機能自体の有効/無効（PREMIUM_LEVELS_LOCK_ENABLED）を
  * 含むため、UI 側で「TOEIC L4 の単語か」を判定する用途にはこの関数を使う。
  */
 private fun isPremiumLevelItem(itemLevel: Int): Boolean =
-    VocabularyLevel.ADVANCED.matchesVocabularyItemLevel(itemLevel)
+    VocabularyLevel.TOEIC_800.matchesVocabularyItemLevel(itemLevel)
 
 /** 意味・説明の読み上げ言語。英語は選択中の発音アクセントを反映する。 */
 private fun meaningTtsLanguage(languageCode: String, accentMode: AccentMode): String =
@@ -2930,7 +2937,7 @@ private fun WordCardSearchDialog(
                 }
                 LazyColumn(modifier = Modifier.heightIn(max = 280.dp)) {
                     items(candidates, key = { it.id }) { item ->
-                        // Advanced（プレミアム対象）を未購入で選ぶと購入ガイドを表示する。
+                        // 800+（プレミアム対象）を未購入で選ぶと購入ガイドを表示する。
                         val isPremiumLocked =
                             isPremiumLevelItem(item.level) && !premiumUnlocked
                         ListItem(
@@ -3788,9 +3795,10 @@ private fun LevelFilterRow(
     tourState: FeatureTourState? = null
 ) {
     val levelOptions = listOf(
-        Pair(VocabularyLevel.BASIC, "Basic"),
-        Pair(VocabularyLevel.STANDARD, "Standard"),
-        Pair(VocabularyLevel.ADVANCED, "Advanced")
+        Pair(VocabularyLevel.TOEIC_500, "500+"),
+        Pair(VocabularyLevel.TOEIC_600, "600+"),
+        Pair(VocabularyLevel.TOEIC_700, "700+"),
+        Pair(VocabularyLevel.TOEIC_800, "800+")
     )
     Column(
         modifier = Modifier

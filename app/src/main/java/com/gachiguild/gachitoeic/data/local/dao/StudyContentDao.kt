@@ -83,6 +83,7 @@ interface StudyContentDao {
             synonyms = :synonyms,
             collocations = :collocations,
             example = :example,
+            level = :level,
             topic = :topic
         WHERE id = :id
         """
@@ -104,6 +105,7 @@ interface StudyContentDao {
         synonyms: String,
         collocations: String,
         example: String,
+        level: Int,
         topic: String
     )
 

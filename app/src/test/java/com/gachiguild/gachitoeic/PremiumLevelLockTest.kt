@@ -129,4 +129,32 @@ class PremiumLevelLockTest {
             assertFalse(requiresPurchaseGuide(level, premiumUnlocked = true))
         }
     }
+
+    @Test
+    fun fourToeicBandsMatchInternalLevels() {
+        assertTrue(VocabularyLevel.TOEIC_500.matchesVocabularyItemLevel(1))
+        assertFalse(VocabularyLevel.TOEIC_500.matchesVocabularyItemLevel(2))
+        assertTrue(VocabularyLevel.TOEIC_600.matchesVocabularyItemLevel(2))
+        assertFalse(VocabularyLevel.TOEIC_600.matchesVocabularyItemLevel(3))
+        assertTrue(VocabularyLevel.TOEIC_700.matchesVocabularyItemLevel(3))
+        assertFalse(VocabularyLevel.TOEIC_700.matchesVocabularyItemLevel(4))
+        assertTrue(VocabularyLevel.TOEIC_800.matchesVocabularyItemLevel(4))
+        assertTrue(VocabularyLevel.TOEIC_800.matchesVocabularyItemLevel(5))
+        assertFalse(VocabularyLevel.TOEIC_800.matchesVocabularyItemLevel(3))
+    }
+
+    @Test
+    fun vocabularyAssetHasRequestedScoreBandCounts() {
+        val text = java.io.File("src/main/assets/vocabulary.json").readText()
+        val counts = Regex("\\\"level\\\"\\s*:\\s*(\\d+)")
+            .findAll(text)
+            .map { it.groupValues[1].toInt() }
+            .groupingBy { it }
+            .eachCount()
+
+        assertEquals(
+            mapOf(1 to 1322, 2 to 1457, 3 to 1691, 4 to 1933),
+            counts
+        )
+    }
 }

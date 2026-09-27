@@ -134,7 +134,7 @@ class MainActivity : ComponentActivity() {
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
                     if (showSplash) {
                         Image(
-                            painter = painterResource(R.drawable.splash_green_frog),
+                            painter = painterResource(R.drawable.splash_green_frog_green_text),
                             contentDescription = null,
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.Fit
