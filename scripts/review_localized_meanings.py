@@ -26,7 +26,11 @@ FIELDS = (
 
 # High-confidence corrections found during the full-data audit.
 CORRECTIONS = {
+    ("meaning", "spectral"): "スペクトルの、分光学的な",
+    ("meaning", "camouflage"): "保護色、迷彩；周囲に溶け込むための色や形",
     ("meaningVi", "whether"): "liệu có ... hay không",
+    ("meaningKo", "structuralism"): "구조주의; 기저 체계가 사회와 개인을 형성한다고 보는 이론",
+    ("meaningKo", "frustration"): "좌절; 목표를 이루기 어려워 느끼는 불만이나 속상함",
     ("meaningTh", "liable"): "ต้องรับผิดตามกฎหมาย หรือมีแนวโน้มที่จะ...",
 }
 
