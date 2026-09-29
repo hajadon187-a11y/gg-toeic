@@ -32,6 +32,8 @@ class UserPreferences @Inject constructor(
         private const val DEFAULT_TARGET_LEVEL = "TOEIC_500"
         private const val AI_PROVIDER_PACKAGE_KEY = "ai_provider_package"
         private const val NOTIFICATION_PERMISSION_REQUESTED_KEY = "notification_permission_requested"
+        private const val DISCLAIMER_VERSION_KEY = "disclaimer_version"
+        const val CURRENT_DISCLAIMER_VERSION = 1
     }
 
     /** 発音アクセントを取得（TOEIC向けデフォルト: US） */
@@ -133,6 +135,17 @@ class UserPreferences @Inject constructor(
 
     fun setNotificationPermissionRequested() {
         prefs.edit().putBoolean(NOTIFICATION_PERMISSION_REQUESTED_KEY, true).apply()
+    }
+
+    /** 現在の免責事項を確認済みか。内容を更新するとバージョンを上げて再確認を求める。 */
+    fun isDisclaimerAcknowledged(
+        currentVersion: Int = CURRENT_DISCLAIMER_VERSION
+    ): Boolean = prefs.getInt(DISCLAIMER_VERSION_KEY, 0) >= currentVersion
+
+    fun setDisclaimerAcknowledged(
+        version: Int = CURRENT_DISCLAIMER_VERSION
+    ) {
+        prefs.edit().putInt(DISCLAIMER_VERSION_KEY, version).apply()
     }
 
     fun getLanguageCode(): String = AppLanguage.fromCode(prefs.getString(LANGUAGE_KEY, null)).code
