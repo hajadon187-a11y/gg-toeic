@@ -117,6 +117,114 @@ data class AppStrings(
     val aiNoInstalledApps: String = "ChatGPT、Geminiのインストール済みアプリがありません。",
     val aiLaunchFailed: String = "このAIアプリを起動できませんでした。"
 ) {
+    /** アプリ本体のクローズド配布ライセンス表示。 */
+    val appLicenseTitle: String
+        get() = when (languageCode) {
+            "ja" -> "アプリ本体のライセンス"
+            "zh" -> "应用本体许可证"
+            "hi" -> "ऐप का लाइसेंस"
+            "vi" -> "Giấy phép của ứng dụng"
+            "ko" -> "앱 본체 라이선스"
+            "id" -> "Lisensi aplikasi"
+            "th" -> "ใบอนุญาตของแอป"
+            "es" -> "Licencia de la aplicación"
+            else -> "App license"
+        }
+
+    val appLicenseNotice: String
+        get() = when (languageCode) {
+            "ja" -> "Copyright © 2026 Gachi Guild.\n\nAll rights reserved.\n\n本アプリのコード、画像、独自データの無断転載・改変・再配布を禁止します。"
+            "zh" -> "Copyright © 2026 Gachi Guild。\n\n保留所有权利。\n\n禁止未经授权复制、修改或再分发本应用的代码、图像和原创数据。"
+            "hi" -> "Copyright © 2026 Gachi Guild.\n\nसर्वाधिकार सुरक्षित।\n\nइस ऐप के कोड, छवियों और मौलिक डेटा की अनधिकृत नकल, संशोधन या पुनर्वितरण निषिद्ध है।"
+            "vi" -> "Copyright © 2026 Gachi Guild.\n\nĐã bảo lưu mọi quyền.\n\nNghiêm cấm sao chép, sửa đổi hoặc phân phối lại trái phép mã, hình ảnh và dữ liệu gốc của ứng dụng này."
+            "ko" -> "Copyright © 2026 Gachi Guild.\n\nAll rights reserved.\n\n이 앱의 코드, 이미지 및 독자 데이터의 무단 복제, 수정 또는 재배포를 금지합니다."
+            "id" -> "Copyright © 2026 Gachi Guild.\n\nAll rights reserved.\n\nPenyalinan, modifikasi, atau redistribusi kode, gambar, dan data asli aplikasi ini tanpa izin dilarang."
+            "th" -> "Copyright © 2026 Gachi Guild\n\nสงวนลิขสิทธิ์ทั้งหมด\n\nห้ามคัดลอก ดัดแปลง หรือแจกจ่ายซ้ำโค้ด รูปภาพ และข้อมูลต้นฉบับของแอปนี้โดยไม่ได้รับอนุญาต"
+            "es" -> "Copyright © 2026 Gachi Guild.\n\nTodos los derechos reservados.\n\nSe prohíbe la copia, modificación o redistribución no autorizada del código, las imágenes y los datos originales de esta aplicación."
+            else -> "Copyright © 2026 Gachi Guild.\n\nAll rights reserved.\n\nUnauthorized copying, modification, or redistribution of this app's code, images, and original data is prohibited."
+        }
+
+    val wordNetLicenseTitle: String
+        get() = "WordNet 3.0"
+
+    val wordNetLicenseNotice: String
+        get() = when (languageCode) {
+            "ja" -> "語彙選定の一部で Princeton WordNet 3.0 を参照しています。\n\nWordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.\n\nライセンスと商用利用条件：\nhttps://wordnet.princeton.edu/license-and-commercial-use"
+            "zh" -> "本应用部分词汇的选定参考了 Princeton WordNet 3.0。\n\nWordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.\n\n许可证和商业使用条件：\nhttps://wordnet.princeton.edu/license-and-commercial-use"
+            "hi" -> "इस ऐप में कुछ शब्दों के चयन के लिए Princeton WordNet 3.0 का संदर्भ लिया गया है।\n\nWordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.\n\nलाइसेंस और व्यावसायिक उपयोग की शर्तें:\nhttps://wordnet.princeton.edu/license-and-commercial-use"
+            "vi" -> "Một phần việc lựa chọn từ vựng của ứng dụng này tham khảo Princeton WordNet 3.0.\n\nWordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.\n\nĐiều khoản giấy phép và sử dụng thương mại:\nhttps://wordnet.princeton.edu/license-and-commercial-use"
+            "ko" -> "이 앱의 일부 어휘 선정은 Princeton WordNet 3.0을 참조했습니다.\n\nWordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.\n\n라이선스 및 상업적 이용 조건:\nhttps://wordnet.princeton.edu/license-and-commercial-use"
+            "id" -> "Sebagian pemilihan kosakata aplikasi ini mengacu pada Princeton WordNet 3.0.\n\nWordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.\n\nKetentuan lisensi dan penggunaan komersial:\nhttps://wordnet.princeton.edu/license-and-commercial-use"
+            "th" -> "การคัดเลือกคำศัพท์บางส่วนของแอปนี้อ้างอิง Princeton WordNet 3.0\n\nWordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.\n\nเงื่อนไขใบอนุญาตและการใช้งานเชิงพาณิชย์:\nhttps://wordnet.princeton.edu/license-and-commercial-use"
+            "es" -> "La selección de parte del vocabulario de esta aplicación se basó en Princeton WordNet 3.0.\n\nWordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.\n\nCondiciones de licencia y uso comercial:\nhttps://wordnet.princeton.edu/license-and-commercial-use"
+            else -> "Some of this app's vocabulary selection was checked against Princeton WordNet 3.0.\n\nWordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.\n\nLicense and commercial-use terms:\nhttps://wordnet.princeton.edu/license-and-commercial-use"
+        }
+
+    val licenseDialogTitle: String
+        get() = when (languageCode) {
+            "ja" -> "オープンソースライセンス"
+            "zh" -> "开源许可证"
+            "hi" -> "ओपन-सोर्स लाइसेंस"
+            "vi" -> "Giấy phép nguồn mở"
+            "ko" -> "오픈 소스 라이선스"
+            "id" -> "Lisensi sumber terbuka"
+            "th" -> "ใบอนุญาตโอเพนซอร์ส"
+            "es" -> "Licencias de código abierto"
+            else -> "Open-source licenses"
+        }
+
+    val runtimeDependenciesTitle: String
+        get() = when (languageCode) {
+            "ja" -> "実行時の依存ライブラリ"
+            "zh" -> "运行时依赖库"
+            "hi" -> "रनटाइम निर्भरताएँ"
+            "vi" -> "Thư viện phụ thuộc khi chạy"
+            "ko" -> "런타임 종속 라이브러리"
+            "id" -> "Pustaka dependensi saat runtime"
+            "th" -> "ไลบรารีที่ต้องใช้ขณะทำงาน"
+            "es" -> "Dependencias de ejecución"
+            else -> "Runtime dependencies"
+        }
+
+    val developmentDependenciesTitle: String
+        get() = when (languageCode) {
+            "ja" -> "開発・テスト用の依存ライブラリ"
+            "zh" -> "开发和测试依赖库"
+            "hi" -> "डेवलपमेंट और टेस्ट निर्भरताएँ"
+            "vi" -> "Thư viện phụ thuộc cho phát triển và kiểm thử"
+            "ko" -> "개발 및 테스트 종속 라이브러리"
+            "id" -> "Pustaka dependensi pengembangan dan pengujian"
+            "th" -> "ไลบรารีที่ต้องใช้สำหรับการพัฒนาและทดสอบ"
+            "es" -> "Dependencias de desarrollo y pruebas"
+            else -> "Development and test dependencies"
+        }
+
+    val licenseTextsTitle: String
+        get() = when (languageCode) {
+            "ja" -> "ライセンス本文と通知："
+            "zh" -> "许可证文本和声明："
+            "hi" -> "लाइसेंस पाठ और सूचनाएँ:"
+            "vi" -> "Văn bản giấy phép và thông báo:"
+            "ko" -> "라이선스 본문 및 고지:"
+            "id" -> "Teks lisensi dan pemberitahuan:"
+            "th" -> "ข้อความใบอนุญาตและประกาศ:"
+            "es" -> "Textos y avisos de las licencias:"
+            else -> "License texts and notices:"
+        }
+
+    val licenseTextsDescription: String
+        get() = when (languageCode) {
+            "ja" -> "記載しているバージョンは、このビルドで使用している依存ライブラリを示します。完全な利用条件と通知については、各プロジェクトの公式ドキュメントを確認してください。"
+            "zh" -> "所列版本表示此构建所使用的依赖库。完整的使用条款和声明请参阅各项目的官方文档。"
+            "hi" -> "दिए गए संस्करण इस बिल्ड में उपयोग की गई निर्भरताओं को दर्शाते हैं। पूरी शर्तों और सूचनाओं के लिए प्रत्येक प्रोजेक्ट के आधिकारिक दस्तावेज़ देखें।"
+            "vi" -> "Các phiên bản được liệt kê xác định những thư viện phụ thuộc được dùng trong bản dựng này. Hãy xem tài liệu chính thức của từng dự án để biết đầy đủ điều khoản và thông báo."
+            "ko" -> "표시된 버전은 이 빌드에서 사용된 종속 라이브러리를 나타냅니다. 전체 이용 조건과 고지는 각 프로젝트의 공식 문서를 확인하세요."
+            "id" -> "Versi yang tercantum menunjukkan dependensi yang digunakan dalam build ini. Lihat dokumentasi resmi setiap proyek untuk ketentuan dan pemberitahuan lengkap."
+            "th" -> "เวอร์ชันที่แสดงระบุไลบรารีที่ใช้ในบิลด์นี้ สำหรับข้อกำหนดและประกาศฉบับเต็ม โปรดดูเอกสารอย่างเป็นทางการของแต่ละโครงการ"
+            "es" -> "Las versiones indicadas identifican las dependencias utilizadas en esta compilación. Consulta la documentación oficial de cada proyecto para conocer los términos y avisos completos."
+            else -> "The listed versions identify the dependencies used by this build. Refer to each project's official documentation for complete terms and notices."
+        }
+
     /** 21:00のストリーク危機通知。通知側からも現在の表示言語をそのまま利用する。 */
     val streakReminderTitle: String
         get() = when (languageCode) {
