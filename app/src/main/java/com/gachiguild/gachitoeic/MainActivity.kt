@@ -20,6 +20,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.gachiguild.gachitoeic.presentation.screens.vocabulary.DisclaimerScreen
 import com.gachiguild.gachitoeic.presentation.screens.vocabulary.VocabularyScreen
 import com.gachiguild.gachitoeic.data.local.UserPreferences
 import com.gachiguild.gachitoeic.ui.AppLanguage
@@ -72,6 +73,9 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             var showSplash by remember { mutableStateOf(true) }
+            var showDisclaimer by remember {
+                mutableStateOf(!userPreferences.isDisclaimerAcknowledged())
+            }
             val learningRequest by notificationLearningRequest.asStateFlow().collectAsState()
             val notificationPermissionLauncher = rememberLauncherForActivityResult(
                 ActivityResultContracts.RequestPermission()
@@ -82,8 +86,9 @@ class MainActivity : ComponentActivity() {
                 showSplash = false
             }
 
-            LaunchedEffect(showSplash) {
+            LaunchedEffect(showSplash, showDisclaimer) {
                 if (!showSplash &&
+                    !showDisclaimer &&
                     Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
                     ContextCompat.checkSelfPermission(
                         this@MainActivity,
@@ -147,11 +152,21 @@ class MainActivity : ComponentActivity() {
                                 userPreferences.setLanguageCode(newValue.code)
                             }
                         ) {
-                            // 単語帳アプリ: ログイン・ダッシュボードなしで直接表示
-                            VocabularyScreen(
-                                userPreferences = userPreferences,
-                                startLearningRequest = learningRequest
-                            )
+                            if (showDisclaimer) {
+                                DisclaimerScreen(
+                                    initial = true,
+                                    onComplete = {
+                                        userPreferences.setDisclaimerAcknowledged()
+                                        showDisclaimer = false
+                                    }
+                                )
+                            } else {
+                                // 単語帳アプリ: ログイン・ダッシュボードなしで直接表示
+                                VocabularyScreen(
+                                    userPreferences = userPreferences,
+                                    startLearningRequest = learningRequest
+                                )
+                            }
                         }
                     }
                 }
