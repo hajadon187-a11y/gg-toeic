@@ -3504,16 +3504,12 @@ private fun SettingsDialog(
                 ) {
                     Column(modifier = Modifier.padding(12.dp)) {
                         Text(
-                            text = if (strings.isJapanese) "📄 オープンソースライセンス" else "Open-source licenses",
+                            text = strings.license,
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.Bold
                         )
                         Text(
-                            text = if (strings.isJapanese) {
-                                "このアプリで使用しているオープンソースライブラリのライセンス情報を表示します。"
-                            } else {
-                                "License information for open-source libraries used in this app."
-                            },
+                            text = strings.licenseDescription,
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -3657,8 +3653,6 @@ private fun LicenseDialog(
     strings: AppStrings,
     onDismiss: () -> Unit
 ) {
-    val isJapanese = strings.isJapanese
-
     // Keep this inventory aligned with app/build.gradle.kts. The version is shown so
     // the applicable license can be identified for the exact build being used.
     data class LicenseItem(
@@ -3699,7 +3693,7 @@ private fun LicenseDialog(
         onDismissRequest = onDismiss,
         title = {
             Text(
-                if (isJapanese) "オープンソースライセンス" else "Open-source licenses",
+                strings.licenseDialogTitle,
                 fontWeight = FontWeight.Bold
             )
         },
@@ -3709,7 +3703,28 @@ private fun LicenseDialog(
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Text(
-                    text = if (isJapanese) "実行時の依存ライブラリ" else "Runtime dependencies",
+                    text = strings.appLicenseTitle,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = strings.appLicenseNotice,
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = strings.wordNetLicenseTitle,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = strings.wordNetLicenseNotice,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = strings.runtimeDependenciesTitle,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold
                 )
@@ -3729,7 +3744,7 @@ private fun LicenseDialog(
                 }
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = if (isJapanese) "開発・テスト用の依存ライブラリ" else "Development and test dependencies",
+                    text = strings.developmentDependenciesTitle,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold
                 )
@@ -3749,20 +3764,11 @@ private fun LicenseDialog(
                 }
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = if (isJapanese) {
-                        "ライセンス本文と通知：\n" +
-                            "Apache License 2.0 — https://www.apache.org/licenses/LICENSE-2.0\n" +
-                            "Eclipse Public License 1.0 — https://www.eclipse.org/legal/epl-v10.html\n" +
-                            "MIT License — https://opensource.org/license/mit\n\n" +
-                            "記載しているバージョンは、このビルドで使用している依存ライブラリを示します。完全な利用条件と通知については、各プロジェクトの公式ドキュメントを確認してください。"
-                    } else {
-                        "License texts and notices:\n" +
-                            "Apache License 2.0 — https://www.apache.org/licenses/LICENSE-2.0\n" +
-                            "Eclipse Public License 1.0 — https://www.eclipse.org/legal/epl-v10.html\n" +
-                            "MIT License — https://opensource.org/license/mit\n\n" +
-                            "The listed versions identify the dependencies used by this build. " +
-                            "Refer to each project's official documentation for complete terms and notices."
-                    },
+                    text = strings.licenseTextsTitle + "\n" +
+                        "Apache License 2.0 — https://www.apache.org/licenses/LICENSE-2.0\n" +
+                        "Eclipse Public License 1.0 — https://www.eclipse.org/legal/epl-v10.html\n" +
+                        "MIT License — https://opensource.org/license/mit\n\n" +
+                        strings.licenseTextsDescription,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.outline
                 )
