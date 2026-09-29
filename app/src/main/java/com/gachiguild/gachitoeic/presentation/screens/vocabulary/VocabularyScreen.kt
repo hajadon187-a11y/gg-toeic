@@ -255,6 +255,7 @@ fun VocabularyScreen(
     var showGoalDialog by remember { mutableStateOf(false) }
     var showStreakDialog by remember { mutableStateOf(false) }
     var showSettings by remember { mutableStateOf(shouldShowSettingsBeforeOnboarding) }
+    var showDisclaimer by remember { mutableStateOf(false) }
     var showPremiumDialog by remember { mutableStateOf(false) }
     var showFrogButtonHelp by remember {
         // 自動表示はメイン画面ツアーに統合し、こちらはカード上のヘルプボタンから開く。
@@ -357,28 +358,33 @@ fun VocabularyScreen(
         }
     }
 
-    fun skipMainFeatureTour() {
-        userPreferences.setMainFeatureTourCompleted()
-        showMainFeatureTour = false
-        if (userPreferences.isOnboardingCompleted()) {
-            if (showAiSetupAfterTutorial) {
-                showSettings = true
-                showSettingsTourAfterMain = true
-            } else {
-                showSettingsTourAfterMain = false
-            }
-        } else {
-            // ツアーをスキップしても、設定説明の後にAI設定を案内する。
-            showSettings = true
-            showSettingsTourAfterMain = true
-        }
-    }
-
     fun selectFlashcardTab() {
         progressExpanded = false
         requestedWordCardId = null
         viewModel.setFilter(VocabularyFilter.REVIEW)
         searchQuery = ""
+    }
+
+    /**
+     * チュートリアルを途中でスキップしたときの共通終了処理。
+     * どの段階からでも、単語カードタブを選択して学習を開始する。
+     */
+    fun startLearningFromTutorial() {
+        userPreferences.setTargetLevel(targetLevel)
+        viewModel.setLevelFilter(targetLevelToVocabularyLevel(targetLevel))
+        userPreferences.setMainFeatureTourCompleted()
+        userPreferences.setOnboardingCompleted()
+        showMainFeatureTour = false
+        showSettings = false
+        showOnboarding = false
+        showSettingsTourAfterMain = false
+        showAiSetupAfterTutorial = false
+        selectFlashcardTab()
+        screenResetKey++
+    }
+
+    fun skipMainFeatureTour() {
+        startLearningFromTutorial()
     }
 
     // 21:00の通知をタップした場合は、設定や履歴ではなく未マスター単語カードを開く。
@@ -458,15 +464,11 @@ fun VocabularyScreen(
 
     fun startLearningFromOnboarding() {
         // AI設定を後回しにしても、現在の目標レベルで単語カード学習を始められるようにする。
-        userPreferences.setTargetLevel(targetLevel)
-        viewModel.setLevelFilter(targetLevelToVocabularyLevel(targetLevel))
-        userPreferences.setOnboardingCompleted()
-        showOnboarding = false
-        showSettings = false
-        showAiSetupAfterTutorial = false
-        selectFlashcardTab()
-        // 復習対象デッキを再生成し、ランダムな1語を先頭に表示する。
-        screenResetKey++
+        startLearningFromTutorial()
+    }
+
+    fun skipSettingsTour() {
+        startLearningFromTutorial()
     }
 
     fun finishSettingsTour() {
@@ -828,6 +830,10 @@ fun VocabularyScreen(
                         backupViewModel.clearMessage()
                         (context as? Activity)?.recreate()
                     },
+                    onOpenDisclaimer = {
+                        showSettings = false
+                        showDisclaimer = true
+                    },
                     onTutorial = {
                         showSettings = false
                         showOnboarding = false
@@ -836,7 +842,14 @@ fun VocabularyScreen(
                         showMainFeatureTour = true
                     },
                     autoStartTour = showSettingsTourAfterMain,
-                    onTourDismissed = ::finishSettingsTour
+                    onTourFinished = ::finishSettingsTour,
+                    onTourSkipped = ::skipSettingsTour
+                )
+            }
+            if (showDisclaimer) {
+                DisclaimerScreen(
+                    initial = false,
+                    onComplete = { showDisclaimer = false }
                 )
             }
             if (showPremiumDialog) {
@@ -3154,9 +3167,11 @@ private fun SettingsDialog(
     onConfirmRestore: () -> Unit,
     onClearBackupMessage: () -> Unit,
     onRestoreCompleted: () -> Unit,
+    onOpenDisclaimer: () -> Unit,
     onTutorial: () -> Unit,
     autoStartTour: Boolean = false,
-    onTourDismissed: () -> Unit = {}
+    onTourFinished: () -> Unit = {},
+    onTourSkipped: () -> Unit = onTourFinished
 ) {
     val languageToggle = LocalLanguageToggle.current
     val context = LocalContext.current
@@ -3435,6 +3450,49 @@ private fun SettingsDialog(
                     LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
                 }
 
+                // ── 免責事項 ──
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable(onClick = onOpenDisclaimer),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f)
+                    )
+                ) {
+                    Column(modifier = Modifier.padding(12.dp)) {
+                        Text(
+                            text = when (strings.languageCode) {
+                                "zh" -> "⚠️ 免责声明与重要提示"
+                                "hi" -> "⚠️ अस्वीकरण और महत्वपूर्ण सूचना"
+                                "vi" -> "⚠️ Tuyên bố miễn trừ và lưu ý quan trọng"
+                                "ko" -> "⚠️ 면책사항 및 중요 안내"
+                                "id" -> "⚠️ Penafian dan Catatan Penting"
+                                "th" -> "⚠️ ข้อจำกัดความรับผิดและข้อควรรู้สำคัญ"
+                                "es" -> "⚠️ Descargo de responsabilidad y notas importantes"
+                                "ja" -> "⚠️ 免責事項・ご利用前の注意"
+                                else -> "⚠️ Disclaimer & Important Notes"
+                            },
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            text = when (strings.languageCode) {
+                                "zh" -> "查看有关学习成果、AI、备份和付费功能的重要说明。"
+                                "hi" -> "सीखने के परिणाम, AI, बैकअप और भुगतान सुविधाओं से जुड़ी महत्वपूर्ण जानकारी देखें।"
+                                "vi" -> "Xem các lưu ý quan trọng về kết quả học tập, AI, sao lưu và tính năng trả phí."
+                                "ko" -> "학습 결과, AI, 백업 및 유료 기능에 관한 중요한 안내를 확인합니다."
+                                "id" -> "Lihat catatan penting tentang hasil belajar, AI, pencadangan, dan fitur berbayar."
+                                "th" -> "ดูข้อมูลสำคัญเกี่ยวกับผลการเรียน AI การสำรองข้อมูล และฟีเจอร์แบบชำระเงิน"
+                                "es" -> "Consulta información importante sobre resultados, IA, copias de seguridad y funciones de pago."
+                                "ja" -> "学習成果、AI、バックアップ、課金などの重要事項を表示します。"
+                                else -> "Important notes about learning results, AI, backups, and paid features."
+                            },
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+
                 // ── ライセンス ──
                 Card(
                     modifier = Modifier
@@ -3446,19 +3504,15 @@ private fun SettingsDialog(
                 ) {
                     Column(modifier = Modifier.padding(12.dp)) {
                         Text(
-                            text = if (strings.isJapanese) {
-                                "📄 ライセンスとデータについて"
-                            } else {
-                                "Licenses & Data Notes"
-                            },
+                            text = if (strings.isJapanese) "📄 オープンソースライセンス" else "Open-source licenses",
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.Bold
                         )
                         Text(
                             text = if (strings.isJapanese) {
-                                "オープンソースライブラリのライセンスと、語彙データの作成方針を表示します。"
+                                "このアプリで使用しているオープンソースライブラリのライセンス情報を表示します。"
                             } else {
-                                "Open-source software licenses and vocabulary-data methodology."
+                                "License information for open-source libraries used in this app."
                             },
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -3508,9 +3562,13 @@ private fun SettingsDialog(
                         copy = featureTourCopy(strings),
                         stepIndex = settingsTourStepIndex,
                         onStepIndexChange = { settingsTourStepIndex = it },
-                        onDismiss = {
+                        onFinished = {
                             showSettingsTour = false
-                            onTourDismissed()
+                            onTourFinished()
+                        },
+                        onSkipped = {
+                            showSettingsTour = false
+                            onTourSkipped()
                         }
                     )
                 }
@@ -3641,7 +3699,7 @@ private fun LicenseDialog(
         onDismissRequest = onDismiss,
         title = {
             Text(
-                if (isJapanese) "ライセンスとデータについて" else "Licenses & Data Notes",
+                if (isJapanese) "オープンソースライセンス" else "Open-source licenses",
                 fontWeight = FontWeight.Bold
             )
         },
@@ -3708,72 +3766,6 @@ private fun LicenseDialog(
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.outline
                 )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = if (isJapanese) {
-                        "商標に関する注意：\n" +
-                            "TOEIC® は ETS の登録商標です。\n" +
-                            "このアプリは ETS と提携、承認、認可されていません。TOEIC は、説明対象の試験を識別する目的でのみ使用しています。"
-                    } else {
-                        "Trademark notice:\n" +
-                            "TOEIC® is a registered trademark of ETS.\n" +
-                            "This app is not affiliated with, endorsed or approved by ETS. " +
-                            "TOEIC is used only to identify the examination discussed."
-                    },
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.outline
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = if (isJapanese) {
-                        "語彙データの作成方針と注意\n" +
-                            "本アプリの語彙データは、本プロジェクトが選定・編集したデータです。作成過程ではAIを活用して候補語の選定、意味・例文・訳の作成、学習レベルの設定を行い、プロジェクト側で妥当性を検証・編集しています。\n" +
-                            "語彙データの作成にはAIを利用していますが、語彙データの表示・学習のためにユーザー情報を外部AIへ送信するものではありません。\n" +
-                            "AIによる生成・分類には、ハルシネーション（もっともらしい誤情報）などの誤りが含まれる可能性があります。内容の正確性・完全性を保証するものではありません。\n" +
-                            "学習上の目安として利用し、重要な判断や公式教材の代わりには使用しないでください。\n" +
-                            "本アプリのコンテンツは、ETSその他の試験実施団体が提供・承認した公式教材ではありません。"
-                    } else {
-                        "Vocabulary data methodology and notice\n" +
-                            "The vocabulary data in this app was selected and edited by this project. During preparation, AI was used to select candidate words, create meanings, examples and translations, and assign learning levels; the project then reviewed and edited the results for validity.\n" +
-                            "AI was used to prepare the vocabulary data, but user information is not sent to external AI services for displaying or studying the vocabulary data.\n" +
-                            "AI-generated or AI-assisted selection and classification may contain errors, including hallucinations. Accuracy and completeness are not guaranteed.\n" +
-                            "Use this content as a study guide, not as a substitute for official materials or for important decisions.\n" +
-                            "This app is not official material provided, endorsed, or approved by ETS or any other test organization."
-                    },
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.outline
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = if (isJapanese) "プライバシーと連絡先" else "Privacy and contact",
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold
-                )
-                val context = LocalContext.current
-                TextButton(
-                    onClick = {
-                        runCatching {
-                            context.startActivity(
-                                Intent(Intent.ACTION_VIEW, Uri.parse(PRIVACY_POLICY_URL))
-                            )
-                        }
-                    },
-                    contentPadding = PaddingValues(horizontal = 0.dp)
-                ) {
-                    Text(if (isJapanese) "プライバシーポリシー" else "Privacy Policy")
-                }
-                TextButton(
-                    onClick = {
-                        runCatching {
-                            context.startActivity(
-                                Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$OPERATOR_EMAIL"))
-                            )
-                        }
-                    },
-                    contentPadding = PaddingValues(horizontal = 0.dp)
-                ) {
-                    Text(if (isJapanese) "連絡先: $OPERATOR_EMAIL" else "Contact: $OPERATOR_EMAIL")
-                }
             }
         },
         confirmButton = {
