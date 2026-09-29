@@ -901,7 +901,8 @@ fun SettingsTourOverlay(
     copy: FeatureTourCopy,
     stepIndex: Int,
     onStepIndexChange: (Int) -> Unit,
-    onDismiss: () -> Unit
+    onFinished: () -> Unit,
+    onSkipped: () -> Unit = onFinished
 ) {
     if (!visible || steps.isEmpty()) return
 
@@ -994,7 +995,7 @@ fun SettingsTourOverlay(
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    OutlinedButton(onClick = onDismiss) {
+                    OutlinedButton(onClick = onSkipped) {
                         Text(copy.skip, style = MaterialTheme.typography.labelSmall)
                     }
                     if (stepIndex > 0) {
@@ -1009,7 +1010,7 @@ fun SettingsTourOverlay(
                     }
                     Button(
                         onClick = {
-                            if (stepIndex == steps.lastIndex) onDismiss()
+                            if (stepIndex == steps.lastIndex) onFinished()
                             else onStepIndexChange(stepIndex + 1)
                         },
                         modifier = Modifier.weight(1f)
